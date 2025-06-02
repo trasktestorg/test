@@ -64,7 +64,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
           GITHUB_OWNER: open-telemetry # this is needed since using a classic PAT above
         run: |
-          set -o pipefail && terraform plan -no-color 2>&1 | tee plan.txt
+          set -o pipefail && terraform plan -lock-timeout=15m -no-color 2>&1 | tee plan.txt
 
       - name: Add comment on PR
         if: steps.tf-files.outputs.changed == 'true'

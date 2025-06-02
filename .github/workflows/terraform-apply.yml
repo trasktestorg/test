@@ -59,4 +59,4 @@ jobs:
           GITHUB_OWNER: open-telemetry # this is needed since using a classic PAT above
         run: |
           # TODO add -auto-approve when ready
-          terraform apply -no-color
+          terraform apply -lock-timeout=15m -no-color
