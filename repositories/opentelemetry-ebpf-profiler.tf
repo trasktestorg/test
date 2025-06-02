@@ -10,7 +10,6 @@ module "opentelemetry-ebpf-profiler-repo" {
   merge_commit_message = "PR_TITLE"
   allow_update_branch = true
   allow_auto_merge = true
-  vulnerability_alerts = true
   secret_scanning_status = "enabled"
   secret_scanning_push_protection_status = "enabled"
 }

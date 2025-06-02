@@ -10,7 +10,6 @@ module "sig-contributor-experience-repo" {
   allow_update_branch = true
   delete_branch_on_merge = false
   allow_auto_merge = true
-  vulnerability_alerts = true
 }
 
 module "sig-contributor-experience-branch-protection-rule-0" {

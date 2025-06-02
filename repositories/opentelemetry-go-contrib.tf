@@ -7,7 +7,6 @@ module "opentelemetry-go-contrib-repo" {
   squash_merge_commit_title = "PR_TITLE"
   merge_commit_message = "PR_TITLE"
   allow_update_branch = true
-  vulnerability_alerts = true
 }
 
 module "opentelemetry-go-contrib-branch-protection-rule-0" {

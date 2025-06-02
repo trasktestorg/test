@@ -7,6 +7,7 @@ module "opentelemetry-proto-java-repo" {
   squash_merge_commit_title = "PR_TITLE"
   merge_commit_message = "PR_TITLE"
   allow_auto_merge = true
+  vulnerability_alerts = false
 }
 
 module "opentelemetry-proto-java-branch-protection-rule-0" {

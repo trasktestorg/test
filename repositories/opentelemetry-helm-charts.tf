@@ -8,6 +8,7 @@ module "opentelemetry-helm-charts-repo" {
   merge_commit_message = "PR_TITLE"
   allow_update_branch = true
   delete_branch_on_merge = false
+  vulnerability_alerts = false
   has_pages = true
 }
 

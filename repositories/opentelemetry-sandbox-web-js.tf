@@ -12,6 +12,7 @@ module "opentelemetry-sandbox-web-js-repo" {
   merge_commit_message = "PR_TITLE"
   delete_branch_on_merge = false
   allow_auto_merge = true
+  vulnerability_alerts = false
 }
 
 module "opentelemetry-sandbox-web-js-branch-protection-rule-0" {

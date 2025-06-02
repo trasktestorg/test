@@ -10,6 +10,7 @@ module "opentelemetry-demo-repo" {
   merge_commit_message = "PR_TITLE"
   allow_update_branch = true
   secret_scanning_status = "enabled"
+  vulnerability_alerts = false
 }
 
 module "opentelemetry-demo-branch-protection-rule-0" {

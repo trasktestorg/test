@@ -10,7 +10,6 @@ module "opentelemetry-go-repo" {
   squash_merge_commit_message = "PR_BODY"
   merge_commit_message = "PR_TITLE"
   allow_update_branch = true
-  vulnerability_alerts = true
 }
 
 module "opentelemetry-go-branch-protection-rule-0" {

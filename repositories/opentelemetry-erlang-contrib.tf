@@ -6,7 +6,6 @@ module "opentelemetry-erlang-contrib-repo" {
   has_discussions = true
   squash_merge_commit_message = "COMMIT_MESSAGES"
   merge_commit_message = "PR_TITLE"
-  vulnerability_alerts = true
 }
 
 module "opentelemetry-erlang-contrib-branch-protection-rule-0" {

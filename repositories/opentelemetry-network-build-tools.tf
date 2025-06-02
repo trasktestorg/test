@@ -10,6 +10,7 @@ module "opentelemetry-network-build-tools-repo" {
   merge_commit_title = "PR_TITLE"
   merge_commit_message = "PR_BODY"
   allow_update_branch = true
+  vulnerability_alerts = false
 }
 
 module "opentelemetry-network-build-tools-branch-protection-rule-0" {

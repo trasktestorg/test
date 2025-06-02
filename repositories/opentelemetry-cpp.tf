@@ -9,7 +9,6 @@ module "opentelemetry-cpp-repo" {
   squash_merge_commit_message = "COMMIT_MESSAGES"
   merge_commit_message = "PR_TITLE"
   allow_auto_merge = true
-  vulnerability_alerts = true
   secret_scanning_status = "enabled"
   has_pages = true
 }

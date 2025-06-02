@@ -7,7 +7,6 @@ module "govanityurls-repo" {
   has_projects = true
   squash_merge_commit_message = "COMMIT_MESSAGES"
   merge_commit_message = "PR_TITLE"
-  vulnerability_alerts = true
 }
 
 module "govanityurls-branch-protection-rule-0" {

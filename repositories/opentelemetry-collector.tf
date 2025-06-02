@@ -11,7 +11,6 @@ module "opentelemetry-collector-repo" {
   merge_commit_title = "PR_TITLE"
   allow_update_branch = true
   allow_auto_merge = true
-  vulnerability_alerts = true
 }
 
 module "opentelemetry-collector-branch-protection-rule-0" {

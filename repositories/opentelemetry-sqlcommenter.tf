@@ -10,6 +10,7 @@ module "opentelemetry-sqlcommenter-repo" {
   squash_merge_commit_message = "COMMIT_MESSAGES"
   merge_commit_message = "PR_TITLE"
   delete_branch_on_merge = false
+  vulnerability_alerts = false
   has_pages = true
   pages_source_branch = "main"
   pages_path = "/docs"

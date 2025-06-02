@@ -10,6 +10,7 @@ module "stackoverflow2slack-repo" {
   squash_merge_commit_message = "COMMIT_MESSAGES"
   merge_commit_message = "PR_TITLE"
   delete_branch_on_merge = false
+  vulnerability_alerts = false
 }
 
 module "stackoverflow2slack-branch-protection-rule-0" {

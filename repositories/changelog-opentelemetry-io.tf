@@ -8,7 +8,6 @@ module "changelog-opentelemetry-io-repo" {
   allow_rebase_merge = true
   squash_merge_commit_message = "COMMIT_MESSAGES"
   merge_commit_message = "PR_TITLE"
-  vulnerability_alerts = true
 }
 
 module "changelog-opentelemetry-io-branch-protection-rule-0" {

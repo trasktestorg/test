@@ -10,6 +10,7 @@ module "weaver-repo" {
   squash_merge_commit_message = "COMMIT_MESSAGES"
   merge_commit_message = "PR_TITLE"
   allow_auto_merge = true
+  vulnerability_alerts = false
 }
 
 module "weaver-branch-protection-rule-0" {

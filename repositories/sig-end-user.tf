@@ -5,7 +5,6 @@ module "sig-end-user-repo" {
   has_projects = true
   squash_merge_commit_message = "COMMIT_MESSAGES"
   merge_commit_message = "PR_TITLE"
-  vulnerability_alerts = true
 }
 
 module "sig-end-user-branch-protection-rule-0" {

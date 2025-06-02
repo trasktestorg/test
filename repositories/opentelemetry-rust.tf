@@ -10,7 +10,6 @@ module "opentelemetry-rust-repo" {
   merge_commit_message = "PR_TITLE"
   allow_update_branch = true
   delete_branch_on_merge = false
-  vulnerability_alerts = true
 }
 
 module "opentelemetry-rust-branch-protection-rule-0" {

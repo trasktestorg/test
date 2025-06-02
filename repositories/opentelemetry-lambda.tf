@@ -9,7 +9,6 @@ module "opentelemetry-lambda-repo" {
   merge_commit_message = "PR_TITLE"
   allow_update_branch = true
   allow_auto_merge = true
-  vulnerability_alerts = true
 }
 
 module "opentelemetry-lambda-branch-protection-rule-0" {

@@ -6,7 +6,6 @@ module "opentelemetry-injector-repo" {
   has_projects = true
   squash_merge_commit_message = "COMMIT_MESSAGES"
   merge_commit_message = "PR_TITLE"
-  vulnerability_alerts = true
 }
 
 module "opentelemetry-injector-branch-protection-rule-0" {

@@ -6,6 +6,7 @@ module "opentelemetry-cpp-contrib-repo" {
   squash_merge_commit_message = "COMMIT_MESSAGES"
   merge_commit_message = "PR_TITLE"
   delete_branch_on_merge = false
+  vulnerability_alerts = false
 }
 
 module "opentelemetry-cpp-contrib-branch-protection-rule-0" {

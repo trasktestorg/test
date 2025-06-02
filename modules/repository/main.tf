@@ -21,7 +21,7 @@ variable "allow_update_branch" { default = false }
 variable "allow_auto_merge" { default = false }
 variable "delete_branch_on_merge" { default = true }
 
-variable "vulnerability_alerts" { default = false }
+variable "vulnerability_alerts" { default = true }
 variable "secret_scanning_status" { default = "disabled" }
 variable "secret_scanning_push_protection_status" { default = "disabled" }
 

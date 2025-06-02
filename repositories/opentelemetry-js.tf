@@ -7,7 +7,6 @@ module "opentelemetry-js-repo" {
   has_discussions = true
   squash_merge_commit_title = "PR_TITLE"
   merge_commit_message = "PR_TITLE"
-  vulnerability_alerts = true
   has_pages = true
 }
 

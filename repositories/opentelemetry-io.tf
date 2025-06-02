@@ -8,7 +8,6 @@ module "opentelemetry-io-repo" {
   squash_merge_commit_title = "PR_TITLE"
   merge_commit_message = "PR_TITLE"
   allow_update_branch = true
-  vulnerability_alerts = true
   secret_scanning_status = "enabled"
   secret_scanning_push_protection_status = "enabled"
 }
