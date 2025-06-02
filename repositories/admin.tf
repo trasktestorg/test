@@ -14,6 +14,7 @@ module "admin-branch-protection-rule-0" {
   pattern = "main"
   required_pull_request_reviews = false
   require_code_owner_reviews = false
+  additional_required_status_checks = ["terraform"]
   block_creations = true
 }
 
