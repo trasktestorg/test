@@ -60,3 +60,16 @@ jobs:
         run: |
           # TODO add -auto-approve when ready
           terraform apply -lock-timeout=15m -no-color
+
+      - name: Unlock state file on cancellation
+        if: cancelled() && steps.tf-files.outputs.changed == 'true'
+        env:
+          OCI_tenancy_ocid: ${{ secrets.OCI_TENANCY_OCID }}
+          OCI_user_ocid: ${{ secrets.OCI_USER_OCID }}
+          OCI_fingerprint: ${{ secrets.OCI_FINGERPRINT }}
+          OCI_private_key_path: ${{ runner.temp }}/oci_api_key.pem
+          OCI_region: ${{ secrets.OCI_REGION }}
+        run: |
+          if [ -f .terraform/terraform.tfstate.lock.info ]; then
+            terraform force-unlock $(cat .terraform/terraform.tfstate.lock.info | jq -r .ID)
+          fi
