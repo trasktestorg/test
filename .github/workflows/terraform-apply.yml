@@ -54,5 +54,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
           GITHUB_OWNER: open-telemetry # this is needed since using a classic PAT above
         run: |
-          # TODO change this to apply when ready
-          terraform plan -auto-approve -no-color
+          # TODO add -auto-approve when ready
+          terraform apply -no-color
