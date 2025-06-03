@@ -4,6 +4,7 @@ module "admin-repo" {
   homepage_url = ""
   secret_scanning_status = "enabled"
   secret_scanning_push_protection_status = "enabled"
+  visibility = "private"
 }
 
 module "admin-branch-protection-rule-0" {
