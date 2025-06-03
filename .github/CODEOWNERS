@@ -1,4 +1,4 @@
-/repositories/admin.tf: @open-telemetry/admins @open-telemetry/admins     
+/repositories/admin.tf: @open-telemetry/admins
 /repositories/allstar.tf: @open-telemetry/admins @open-telemetry/sig-security-maintainers
 /repositories/assign-reviewers-action.tf: @open-telemetry/admins @open-telemetry/assign-reviewers-action-maintainers
 /repositories/build-tools.tf: @open-telemetry/admins @open-telemetry/technical-committee
