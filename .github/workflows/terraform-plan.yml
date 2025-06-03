@@ -41,6 +41,10 @@ jobs:
         if: steps.tf-files.outputs.changed == 'true'
         with:
           terraform_version: 1.12.1
+          # the wrapper gets in the way of receiving process termination signals
+          # which causes terraform to not release the state lock when the github action is cancelled
+          # see https://github.com/hashicorp/setup-terraform/issues/441
+          terraform_wrapper: false
 
       - name: Create private key file
         if: steps.tf-files.outputs.changed == 'true'
@@ -68,32 +72,17 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
           GITHUB_OWNER: open-telemetry # this is needed since using a classic PAT above
         run: |
-          set -o pipefail && terraform plan -lock-timeout=15m -no-color 2>&1 | tee plan.txt
+          # exec is needed in order for terraform to receive the process termination signals
+          # on github action cancellation, which allows it to release the state lock
+          exec terraform plan -lock-timeout=15m -no-color -out=tfplan
 
-      - name: Unlock state file on cancellation
-        if: cancelled() && steps.tf-files.outputs.changed == 'true'
-        env:
-          OCI_tenancy_ocid: ${{ secrets.OCI_TENANCY_OCID }}
-          OCI_user_ocid: ${{ secrets.OCI_USER_OCID }}
-          OCI_fingerprint: ${{ secrets.OCI_FINGERPRINT }}
-          OCI_private_key_path: ${{ runner.temp }}/oci_api_key.pem
-          OCI_region: ${{ secrets.OCI_REGION }}
-        run: |
-          if [ -f .terraform/terraform.tfstate.lock.info ]; then
-            terraform force-unlock $(cat .terraform/terraform.tfstate.lock.info | jq -r .ID)
-          fi
-      
       - name: Add comment on PR
         if: steps.tf-files.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           echo '```' > body.txt
-          if grep -q "^Terraform will perform" plan.txt; then
-            awk '/^Terraform will perform/ {found=1} found && !done {print} /^Plan: / {done=1}' plan.txt >> body.txt
-          else
-            cat plan.txt >> body.txt
-          fi
+          terraform show -no-color tfplan > body.txt
           echo '```' >> body.txt
 
           gh pr comment ${{ github.event.pull_request.number }} --body-file body.txt
