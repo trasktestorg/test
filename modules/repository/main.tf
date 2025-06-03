@@ -88,7 +88,7 @@ resource "github_repository" "this" {
   has_downloads = true
 
   # extra safety (PAT doesn't have delete_repo permission anyways)
-  # archive_on_destroy = true
+  archive_on_destroy = true
 }
 
 output "node_id" {
