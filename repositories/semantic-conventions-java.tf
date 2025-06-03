@@ -4,8 +4,6 @@ module "semantic-conventions-java-repo" {
   description = "Java generated classes for semantic conventions"
   homepage_url = ""
   has_projects = true
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
   allow_auto_merge = true
   vulnerability_alerts = false
 }

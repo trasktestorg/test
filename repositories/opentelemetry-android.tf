@@ -5,8 +5,6 @@ module "opentelemetry-android-repo" {
   homepage_url = ""
   has_wiki = true
   has_projects = true
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
   delete_branch_on_merge = false
 }
 

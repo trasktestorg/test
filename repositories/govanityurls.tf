@@ -5,8 +5,6 @@ module "govanityurls-repo" {
   homepage_url = ""
   has_issues = false
   has_projects = true
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
 }
 
 module "govanityurls-branch-protection-rule-0" {

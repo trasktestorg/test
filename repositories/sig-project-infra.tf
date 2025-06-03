@@ -4,8 +4,6 @@ module "sig-project-infra-repo" {
   homepage_url = ""
   has_wiki = true
   has_projects = true
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
 }
 
 module "sig-project-infra-branch-protection-rule-0" {

@@ -6,8 +6,6 @@ module "opentelemetry-php-repo" {
   topics = ["opentelemetry", "open-telemetry", "opentelemetry-php", "logging", "metrics", "php", "tracing"]
   has_wiki = true
   has_projects = true
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
   has_pages = true
   pages_build_type = "workflow"
   pages_source_branch = "main"

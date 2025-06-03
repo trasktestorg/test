@@ -5,7 +5,7 @@ module "opentelemetry-dotnet-contrib-repo" {
   topics = ["opentelemetry", "dotnet", "dotnet-core"]
   has_discussions = true
   squash_merge_commit_title = "PR_TITLE"
-  merge_commit_message = "PR_TITLE"
+  squash_merge_commit_message = "BLANK"
   secret_scanning_status = "enabled"
 }
 

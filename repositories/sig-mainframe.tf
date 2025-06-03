@@ -4,8 +4,6 @@ module "sig-mainframe-repo" {
   description = "Repository of the Mainframe SIG - Our aim is to enable OpenTelemetry for the Mainframe."
   homepage_url = ""
   has_projects = true
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
 }
 
 module "sig-mainframe-branch-protection-rule-0" {

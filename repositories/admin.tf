@@ -2,7 +2,6 @@ module "admin-repo" {
   source = "../modules/repository"
   name   = "admin"
   homepage_url = ""
-  squash_merge_commit_message = "COMMIT_MESSAGES"
   secret_scanning_status = "enabled"
   secret_scanning_push_protection_status = "enabled"
 }

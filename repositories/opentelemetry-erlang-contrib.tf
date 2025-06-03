@@ -4,8 +4,6 @@ module "opentelemetry-erlang-contrib-repo" {
   description = "OpenTelemetry instrumentation for Erlang & Elixir"
   has_projects = true
   has_discussions = true
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
 }
 
 module "opentelemetry-erlang-contrib-branch-protection-rule-0" {

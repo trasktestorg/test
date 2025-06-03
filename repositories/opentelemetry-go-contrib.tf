@@ -5,7 +5,7 @@ module "opentelemetry-go-contrib-repo" {
   homepage_url = "https://opentelemetry.io/"
   has_projects = true
   squash_merge_commit_title = "PR_TITLE"
-  merge_commit_message = "PR_TITLE"
+  squash_merge_commit_message = "BLANK"
   allow_update_branch = true
 }
 

@@ -3,8 +3,6 @@ module "opentelemetry-cpp-contrib-repo" {
   name   = "opentelemetry-cpp-contrib"
   homepage_url = "https://opentelemetry.io/"
   has_discussions = true
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
   delete_branch_on_merge = false
   vulnerability_alerts = false
 }

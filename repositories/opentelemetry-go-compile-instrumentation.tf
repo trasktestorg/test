@@ -5,8 +5,6 @@ module "opentelemetry-go-compile-instrumentation-repo" {
   homepage_url = ""
   has_projects = true
   has_discussions = true
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
   secret_scanning_status = "enabled"
   secret_scanning_push_protection_status = "enabled"
 }

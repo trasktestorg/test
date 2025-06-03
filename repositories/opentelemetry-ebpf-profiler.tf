@@ -7,7 +7,7 @@ module "opentelemetry-ebpf-profiler-repo" {
   has_wiki = true
   has_projects = true
   squash_merge_commit_title = "PR_TITLE"
-  merge_commit_message = "PR_TITLE"
+  squash_merge_commit_message = "BLANK"
   allow_update_branch = true
   allow_auto_merge = true
   secret_scanning_status = "enabled"

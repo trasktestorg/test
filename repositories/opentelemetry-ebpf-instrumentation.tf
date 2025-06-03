@@ -4,8 +4,6 @@ module "opentelemetry-ebpf-instrumentation-repo" {
   homepage_url = ""
   has_wiki = true
   has_projects = true
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
 }
 
 module "opentelemetry-ebpf-instrumentation-branch-protection-rule-0" {

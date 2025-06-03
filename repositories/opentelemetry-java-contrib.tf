@@ -3,7 +3,7 @@ module "opentelemetry-java-contrib-repo" {
   name   = "opentelemetry-java-contrib"
   has_discussions = true
   squash_merge_commit_title = "PR_TITLE"
-  merge_commit_message = "PR_TITLE"
+  squash_merge_commit_message = "BLANK"
   allow_auto_merge = true
   vulnerability_alerts = false
 }

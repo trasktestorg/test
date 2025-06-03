@@ -3,8 +3,6 @@ module "sig-end-user-repo" {
   name   = "sig-end-user"
   homepage_url = ""
   has_projects = true
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
 }
 
 module "sig-end-user-branch-protection-rule-0" {

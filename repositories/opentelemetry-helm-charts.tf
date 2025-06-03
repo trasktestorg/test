@@ -4,8 +4,6 @@ module "opentelemetry-helm-charts-repo" {
   description = "OpenTelemetry Helm Charts"
   has_wiki = true
   has_projects = true
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
   allow_update_branch = true
   delete_branch_on_merge = false
   vulnerability_alerts = false

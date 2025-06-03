@@ -6,8 +6,6 @@ module "opentelemetry-ruby-repo" {
   topics = ["telemetry", "distributed-tracing", "metrics", "opentelemetry", "opentelemetry-ruby", "opentelemetry-api", "hacktoberfest"]
   has_projects = true
   has_discussions = true
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
   delete_branch_on_merge = false
   has_pages = true
 }

@@ -5,8 +5,6 @@ module "opentelemetry-dotnet-instrumentation-repo" {
   has_projects = true
   has_discussions = true
   squash_merge_commit_title = "PR_TITLE"
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
   allow_auto_merge = true
 }
 

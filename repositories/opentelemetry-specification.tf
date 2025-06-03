@@ -7,7 +7,6 @@ module "opentelemetry-specification-repo" {
   has_discussions = true
   squash_merge_commit_title = "PR_TITLE"
   squash_merge_commit_message = "PR_BODY"
-  merge_commit_message = "PR_TITLE"
   allow_update_branch = true
   allow_auto_merge = true
 }

@@ -5,8 +5,6 @@ module "opentelemetry-proto-go-repo" {
   topics = ["protobuf", "otel"]
   has_wiki = true
   has_projects = true
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
   allow_update_branch = true
 }
 

@@ -7,7 +7,7 @@ module "opentelemetry-rust-repo" {
   has_discussions = true
   allow_rebase_merge = true
   squash_merge_commit_title = "PR_TITLE"
-  merge_commit_message = "PR_TITLE"
+  squash_merge_commit_message = "BLANK"
   allow_update_branch = true
   delete_branch_on_merge = false
 }

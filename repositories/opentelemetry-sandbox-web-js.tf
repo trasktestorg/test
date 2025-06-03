@@ -8,8 +8,6 @@ module "opentelemetry-sandbox-web-js-repo" {
   allow_merge_commit = true
   allow_squash_merge = false
   allow_rebase_merge = true
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
   delete_branch_on_merge = false
   allow_auto_merge = true
   vulnerability_alerts = false

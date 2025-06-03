@@ -5,7 +5,7 @@ module "opentelemetry-dotnet-repo" {
   topics = ["telemetry", "distributed-tracing", "asp-net-core", "metrics", "asp-net", "opentelemetry", "netcore", "instrumentation-libraries", "ilogger", "iloggerprovider", "logging", "otlp"]
   has_discussions = true
   squash_merge_commit_title = "PR_TITLE"
-  merge_commit_message = "PR_TITLE"
+  squash_merge_commit_message = "BLANK"
   secret_scanning_status = "enabled"
 }
 

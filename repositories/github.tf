@@ -2,8 +2,6 @@ module "github-repo" {
   source = "../modules/repository"
   name   = ".github"
   homepage_url = ""
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
   allow_update_branch = true
   vulnerability_alerts = false
 }

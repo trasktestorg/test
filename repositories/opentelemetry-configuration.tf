@@ -5,8 +5,6 @@ module "opentelemetry-configuration-repo" {
   homepage_url = "https://opentelemetry.io/docs/specs/otel/configuration/#declarative-configuration"
   has_wiki = true
   has_projects = true
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
 }
 
 module "opentelemetry-configuration-branch-protection-rule-0" {

@@ -13,9 +13,9 @@ variable "allow_squash_merge" { default = true }
 variable "allow_rebase_merge" { default = false }
 
 variable "squash_merge_commit_title" { default = "COMMIT_OR_PR_TITLE" }
-variable "squash_merge_commit_message" { default = "BLANK" }
+variable "squash_merge_commit_message" { default = "COMMIT_MESSAGES" }
 variable "merge_commit_title" { default = "MERGE_MESSAGE" }
-variable "merge_commit_message" { default = "BLANK" }
+variable "merge_commit_message" { default = "PR_TITLE" }
 
 variable "allow_update_branch" { default = false }
 variable "allow_auto_merge" { default = false }

@@ -6,8 +6,6 @@ module "opentelemetry-demo-repo" {
   topics = ["jaeger", "opentelemetry", "opentelemetry-collector", "opentelemetry-dotnet", "opentelemetry-erlang", "opentelemetry-go", "opentelemetry-java-agent", "opentelemetry-javascript", "opentelemetry-python", "opentelemetry-rust", "prometheus", "demo"]
   has_projects = true
   has_discussions = true
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
   allow_update_branch = true
   secret_scanning_status = "enabled"
   vulnerability_alerts = false

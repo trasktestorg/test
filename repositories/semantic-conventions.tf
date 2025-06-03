@@ -5,7 +5,7 @@ module "semantic-conventions-repo" {
   homepage_url = ""
   has_projects = true
   squash_merge_commit_title = "PR_TITLE"
-  merge_commit_message = "PR_TITLE"
+  squash_merge_commit_message = "BLANK"
   allow_auto_merge = true
   secret_scanning_status = "enabled"
 }

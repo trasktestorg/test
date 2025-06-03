@@ -3,7 +3,7 @@ module "sig-security-repo" {
   name   = "sig-security"
   homepage_url = ""
   squash_merge_commit_title = "PR_TITLE"
-  merge_commit_message = "PR_TITLE"
+  squash_merge_commit_message = "BLANK"
   allow_auto_merge = true
   secret_scanning_status = "enabled"
   secret_scanning_push_protection_status = "enabled"

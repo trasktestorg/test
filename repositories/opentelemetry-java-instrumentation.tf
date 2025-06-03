@@ -6,7 +6,7 @@ module "opentelemetry-java-instrumentation-repo" {
   has_projects = true
   has_discussions = true
   squash_merge_commit_title = "PR_TITLE"
-  merge_commit_message = "PR_TITLE"
+  squash_merge_commit_message = "BLANK"
   allow_auto_merge = true
   secret_scanning_status = "enabled"
   has_pages = true

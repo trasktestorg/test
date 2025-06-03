@@ -5,8 +5,6 @@ module "opentelemetry-lambda-repo" {
   topics = ["aws-lambda", "opentelemetry"]
   has_projects = true
   has_discussions = true
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
   allow_update_branch = true
   allow_auto_merge = true
 }

@@ -3,8 +3,6 @@ module "opentelemetry-php-contrib-repo" {
   name   = "opentelemetry-php-contrib"
   description = "opentelemetry-php-contrib"
   has_issues = false
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
   delete_branch_on_merge = false
   secret_scanning_status = "enabled"
 }

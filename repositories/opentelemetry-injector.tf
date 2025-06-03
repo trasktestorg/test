@@ -4,8 +4,6 @@ module "opentelemetry-injector-repo" {
   homepage_url = ""
   has_wiki = true
   has_projects = true
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
 }
 
 module "opentelemetry-injector-branch-protection-rule-0" {

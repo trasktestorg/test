@@ -4,8 +4,6 @@ module "opentelemetry-operator-repo" {
   description = "Kubernetes Operator for OpenTelemetry Collector"
   homepage_url = ""
   topics = ["opentelemetry", "opentelemetry-collector", "kubernetes-operator", "hacktoberfest"]
-  squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
   allow_update_branch = true
   allow_auto_merge = true
 }

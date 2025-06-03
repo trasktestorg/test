@@ -6,7 +6,6 @@ module "opentelemetry-network-build-tools-repo" {
   has_wiki = true
   has_projects = true
   allow_merge_commit = true
-  squash_merge_commit_message = "COMMIT_MESSAGES"
   merge_commit_title = "PR_TITLE"
   merge_commit_message = "PR_BODY"
   allow_update_branch = true

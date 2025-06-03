@@ -5,7 +5,7 @@ module "opentelemetry-proto-java-repo" {
   topics = ["opentelemetry"]
   has_projects = true
   squash_merge_commit_title = "PR_TITLE"
-  merge_commit_message = "PR_TITLE"
+  squash_merge_commit_message = "BLANK"
   allow_auto_merge = true
   vulnerability_alerts = false
 }
