@@ -82,7 +82,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           echo '```' > body.txt
-          terraform show -no-color tfplan > body.txt
+          terraform show -no-color tfplan >> body.txt
           echo '```' >> body.txt
 
           gh pr comment ${{ github.event.pull_request.number }} --body-file body.txt
