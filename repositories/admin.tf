@@ -2,10 +2,7 @@ module "admin-repo" {
   source = "../modules/repository"
   name   = "admin"
   homepage_url = ""
-  has_wiki = true
-  has_projects = true
   squash_merge_commit_message = "COMMIT_MESSAGES"
-  merge_commit_message = "PR_TITLE"
 }
 
 module "admin-branch-protection-rule-0" {
@@ -15,7 +12,6 @@ module "admin-branch-protection-rule-0" {
   required_pull_request_reviews = false
   require_code_owner_reviews = false
   additional_required_status_checks = ["terraform"]
-  block_creations = true
 }
 
 module "admin-branch-protection-rule-1" {
