@@ -64,5 +64,4 @@ jobs:
         run: |
           # exec is needed in order for terraform to receive the process termination signals
           # on github action cancellation, which allows it to release the state lock
-          # TODO add -auto-approve when ready
-          exec terraform apply -lock-timeout=15m -no-color
+          exec terraform apply -auto-approve -lock-timeout=15m -no-color
