@@ -3,7 +3,9 @@ module "opentelemetry-proto-repo" {
   name   = "opentelemetry-proto"
   description = "OpenTelemetry protocol (OTLP) specification and Protobuf definitions"
   homepage_url = "https://opentelemetry.io/docs/specs/otlp/"
-  topics = ["opentelemetry"]
+  topics = [
+    "opentelemetry"
+  ]
   has_wiki = true
   has_projects = true
 }
@@ -13,7 +15,12 @@ module "opentelemetry-proto-branch-protection-rule-0" {
   repository_id = module.opentelemetry-proto-repo.node_id
   pattern = "main"
   required_approving_review_count = 2
-  additional_required_status_checks = ["gen-go", "gen-java", "gen-python", "breaking-change"]
+  additional_required_status_checks = [
+    "breaking-change",
+    "gen-go",
+    "gen-java",
+    "gen-python"
+  ]
   require_conversation_resolution = true
 }
 

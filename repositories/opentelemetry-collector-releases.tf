@@ -2,7 +2,10 @@ module "opentelemetry-collector-releases-repo" {
   source = "../modules/repository"
   name   = "opentelemetry-collector-releases"
   description = "OpenTelemetry Collector Official Releases"
-  topics = ["opentelemetry", "open-telemetry"]
+  topics = [
+    "open-telemetry",
+    "opentelemetry"
+  ]
   has_wiki = true
   has_projects = true
   allow_update_branch = true
@@ -13,7 +16,9 @@ module "opentelemetry-collector-releases-branch-protection-rule-0" {
   source = "../modules/branch-protection-long-term"
   repository_id = module.opentelemetry-collector-releases-repo.node_id
   pattern = "main"
-  additional_required_status_checks = ["Build"]
+  additional_required_status_checks = [
+    "Build"
+  ]
   require_conversation_resolution = true
   block_creations = true
 }

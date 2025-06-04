@@ -14,7 +14,10 @@ module "opentelemetry-java-examples-branch-protection-rule-0" {
   repository_id = module.opentelemetry-java-examples-repo.node_id
   pattern = "main"
   required_status_checks_strict = false
-  additional_required_status_checks = ["required-status-check", "gradle-wrapper-validation"]
+  additional_required_status_checks = [
+    "gradle-wrapper-validation",
+    "required-status-check"
+  ]
   block_creations = true
 }
 

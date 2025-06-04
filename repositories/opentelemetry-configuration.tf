@@ -11,7 +11,9 @@ module "opentelemetry-configuration-branch-protection-rule-0" {
   source = "../modules/branch-protection-long-term"
   repository_id = module.opentelemetry-configuration-repo.node_id
   pattern = "main"
-  additional_required_status_checks = ["check-schema"]
+  additional_required_status_checks = [
+    "check-schema"
+  ]
   block_creations = true
 }
 

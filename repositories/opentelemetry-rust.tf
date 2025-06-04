@@ -2,7 +2,15 @@ module "opentelemetry-rust-repo" {
   source = "../modules/repository"
   name   = "opentelemetry-rust"
   description = "The Rust OpenTelemetry implementation"
-  topics = ["opentelemetry", "tracing", "metrics", "logging", "jaeger", "prometheus", "zipkin"]
+  topics = [
+    "jaeger",
+    "logging",
+    "metrics",
+    "opentelemetry",
+    "prometheus",
+    "tracing",
+    "zipkin"
+  ]
   has_projects = true
   has_discussions = true
   allow_rebase_merge = true
@@ -17,7 +25,12 @@ module "opentelemetry-rust-branch-protection-rule-0" {
   repository_id = module.opentelemetry-rust-repo.node_id
   pattern = "main"
   required_status_checks_strict = false
-  additional_required_status_checks = ["docs", "test (ubuntu-latest, stable)", "test (stable, windows-latest)", "lint"]
+  additional_required_status_checks = [
+    "docs",
+    "lint",
+    "test (stable, windows-latest)",
+    "test (ubuntu-latest, stable)"
+  ]
 }
 
 module "opentelemetry-rust-branch-protection-rule-1" {

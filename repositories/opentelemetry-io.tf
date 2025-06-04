@@ -2,7 +2,10 @@ module "opentelemetry-io-repo" {
   source = "../modules/repository"
   name   = "opentelemetry.io"
   description = "The OpenTelemetry website and documentation"
-  topics = ["opentelemetry", "documentation"]
+  topics = [
+    "documentation",
+    "opentelemetry"
+  ]
   has_projects = true
   has_discussions = true
   squash_merge_commit_title = "PR_TITLE"
@@ -16,7 +19,18 @@ module "opentelemetry-io-branch-protection-rule-0" {
   source = "../modules/branch-protection-long-term"
   repository_id = module.opentelemetry-io-repo.node_id
   pattern = "main"
-  additional_required_status_checks = ["WARNINGS in build log?", "FILENAME check", "BUILD and CHECK LINKS", "SPELLING check", "I18N check", "FILE FORMAT", "REFCACHE updates?", "MARKDOWN linter", "CSPELL page-local word list check", "EXPIRED FILE check"]
+  additional_required_status_checks = [
+    "BUILD and CHECK LINKS",
+    "CSPELL page-local word list check",
+    "EXPIRED FILE check",
+    "FILE FORMAT",
+    "FILENAME check",
+    "I18N check",
+    "MARKDOWN linter",
+    "REFCACHE updates?",
+    "SPELLING check",
+    "WARNINGS in build log?"
+  ]
   required_linear_history = true
   block_creations = true
   enforce_admins = false

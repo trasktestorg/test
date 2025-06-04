@@ -15,7 +15,10 @@ module "opentelemetry-swift-branch-protection-rule-0" {
   repository_id = module.opentelemetry-swift-repo.node_id
   pattern = "main"
   require_code_owner_reviews = false
-  additional_required_status_checks = ["macOS", "iOS"]
+  additional_required_status_checks = [
+    "iOS",
+    "macOS"
+  ]
 }
 
 module "opentelemetry-swift-branch-protection-rule-1" {

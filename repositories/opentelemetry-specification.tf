@@ -2,7 +2,9 @@ module "opentelemetry-specification-repo" {
   source = "../modules/repository"
   name   = "opentelemetry-specification"
   description = "Specifications for OpenTelemetry"
-  topics = ["opentelemetry"]
+  topics = [
+    "opentelemetry"
+  ]
   has_projects = true
   has_discussions = true
   squash_merge_commit_title = "PR_TITLE"
@@ -17,7 +19,11 @@ module "opentelemetry-specification-branch-protection-rule-0" {
   pattern = "main"
   required_approving_review_count = 2
   required_status_checks_strict = false
-  additional_required_status_checks = ["markdownlint", "misspell", "yamllint"]
+  additional_required_status_checks = [
+    "markdownlint",
+    "misspell",
+    "yamllint"
+  ]
   require_conversation_resolution = true
 }
 

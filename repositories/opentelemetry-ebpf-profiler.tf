@@ -3,7 +3,10 @@ module "opentelemetry-ebpf-profiler-repo" {
   name   = "opentelemetry-ebpf-profiler"
   description = "The production-scale datacenter profiler (C/C++, Go, Rust, Python, Java, NodeJS, .NET, PHP, Ruby, Perl, ...)"
   homepage_url = ""
-  topics = ["ebpf", "profiler"]
+  topics = [
+    "ebpf",
+    "profiler"
+  ]
   has_wiki = true
   has_projects = true
   squash_merge_commit_title = "PR_TITLE"

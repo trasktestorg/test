@@ -13,7 +13,10 @@ module "sig-security-branch-protection-rule-0" {
   source = "../modules/branch-protection-long-term"
   repository_id = module.sig-security-repo.node_id
   pattern = "main"
-  additional_required_status_checks = ["markdownlint", "sanity"]
+  additional_required_status_checks = [
+    "markdownlint",
+    "sanity"
+  ]
   require_conversation_resolution = true
   required_linear_history = true
   block_creations = true

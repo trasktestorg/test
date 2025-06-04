@@ -15,7 +15,9 @@ module "opentelemetry-helm-charts-branch-protection-rule-0" {
   repository_id = module.opentelemetry-helm-charts-repo.node_id
   pattern = "main"
   required_status_checks_strict = false
-  additional_required_status_checks = ["lint-test"]
+  additional_required_status_checks = [
+    "lint-test"
+  ]
   required_linear_history = true
 }
 

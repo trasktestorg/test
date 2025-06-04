@@ -3,7 +3,12 @@ module "opentelemetry-operator-repo" {
   name   = "opentelemetry-operator"
   description = "Kubernetes Operator for OpenTelemetry Collector"
   homepage_url = ""
-  topics = ["opentelemetry", "opentelemetry-collector", "kubernetes-operator", "hacktoberfest"]
+  topics = [
+    "hacktoberfest",
+    "kubernetes-operator",
+    "opentelemetry",
+    "opentelemetry-collector"
+  ]
   allow_update_branch = true
   allow_auto_merge = true
 }
@@ -13,7 +18,14 @@ module "opentelemetry-operator-branch-protection-rule-0" {
   repository_id = module.opentelemetry-operator-repo.node_id
   pattern = "main"
   required_status_checks_strict = false
-  additional_required_status_checks = ["CodeQL", "Security", "Unit tests", "e2e-tests-check", "scorecard-tests-check", "Code standards (linting)"]
+  additional_required_status_checks = [
+    "Code standards (linting)",
+    "CodeQL",
+    "e2e-tests-check",
+    "scorecard-tests-check",
+    "Security",
+    "Unit tests"
+  ]
   block_creations = true
   allows_deletion = true
 }

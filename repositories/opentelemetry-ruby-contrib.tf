@@ -2,7 +2,15 @@ module "opentelemetry-ruby-contrib-repo" {
   source = "../modules/repository"
   name   = "opentelemetry-ruby-contrib"
   description = "Contrib Packages for the OpenTelemetry Ruby API and SDK implementation."
-  topics = ["cncf", "distributed-tracing", "opentelemetry", "opentelemetry-instrumentation", "ruby", "telemetry", "tracing"]
+  topics = [
+    "cncf",
+    "distributed-tracing",
+    "opentelemetry",
+    "opentelemetry-instrumentation",
+    "ruby",
+    "telemetry",
+    "tracing"
+  ]
   has_projects = true
   has_discussions = true
   squash_merge_commit_title = "PR_TITLE"
@@ -16,7 +24,10 @@ module "opentelemetry-ruby-contrib-branch-protection-rule-0" {
   source = "../modules/branch-protection-long-term"
   repository_id = module.opentelemetry-ruby-contrib-repo.node_id
   pattern = "main"
-  additional_required_status_checks = ["Conventional Commits Validation", "all / ubuntu-latest"]
+  additional_required_status_checks = [
+    "all / ubuntu-latest",
+    "Conventional Commits Validation"
+  ]
   force_push_bypassers = ["/arielvalentin"]
 }
 

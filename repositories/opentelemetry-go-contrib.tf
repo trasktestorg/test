@@ -13,7 +13,13 @@ module "opentelemetry-go-contrib-branch-protection-rule-0" {
   source = "../modules/branch-protection-long-term"
   repository_id = module.opentelemetry-go-contrib-repo.node_id
   pattern = "main"
-  additional_required_status_checks = ["lint", "test-race", "test-coverage", "test-compatibility", "changelog"]
+  additional_required_status_checks = [
+    "changelog",
+    "lint",
+    "test-compatibility",
+    "test-coverage",
+    "test-race"
+  ]
 }
 
 module "opentelemetry-go-contrib-branch-protection-rule-1" {
@@ -22,7 +28,11 @@ module "opentelemetry-go-contrib-branch-protection-rule-1" {
   pattern = "release-otelhttp-v0.35.1"
   restrict_dismissals = true
   required_status_checks_strict = false
-  additional_required_status_checks = ["lint", "test-coverage", "test-race"]
+  additional_required_status_checks = [
+    "lint",
+    "test-coverage",
+    "test-race"
+  ]
   block_creations = true
   depends_on = [module.opentelemetry-go-contrib-branch-protection-rule-0]
 }

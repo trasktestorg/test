@@ -2,7 +2,16 @@ module "opentelemetry-go-instrumentation-repo" {
   source = "../modules/repository"
   name   = "opentelemetry-go-instrumentation"
   description = "OpenTelemetry Auto Instrumentation using eBPF"
-  topics = ["ebpf", "go", "golang", "instrumentation", "metrics", "observability", "telemetry", "tracing"]
+  topics = [
+    "ebpf",
+    "go",
+    "golang",
+    "instrumentation",
+    "metrics",
+    "observability",
+    "telemetry",
+    "tracing"
+  ]
   has_wiki = true
   has_projects = true
   has_discussions = true

@@ -16,7 +16,19 @@ module "semantic-conventions-branch-protection-rule-0" {
   pattern = "main"
   required_approving_review_count = 2
   required_status_checks_strict = false
-  additional_required_status_checks = ["markdown-toc-check", "markdownlint", "misspell", "schemas-check", "semantic-conventions", "yamllint", "changelog", "areas-dropdown-check", "semantic-conventions-registry", "policies-check", "polices-test"]
+  additional_required_status_checks = [
+    "areas-dropdown-check",
+    "changelog",
+    "markdown-toc-check",
+    "markdownlint",
+    "misspell",
+    "polices-test",
+    "policies-check",
+    "schemas-check",
+    "semantic-conventions",
+    "semantic-conventions-registry",
+    "yamllint"
+  ]
   require_conversation_resolution = true
   block_creations = true
 }

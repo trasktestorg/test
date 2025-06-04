@@ -2,7 +2,11 @@ module "community-repo" {
   source = "../modules/repository"
   name   = "community"
   description = "OpenTelemetry community content"
-  topics = ["opentelemetry", "cncf", "community"]
+  topics = [
+    "cncf",
+    "community",
+    "opentelemetry"
+  ]
   has_projects = true
   allow_auto_merge = true
 }
@@ -13,7 +17,11 @@ module "community-branch-protection-rule-0" {
   pattern = "main"
   required_approving_review_count = 2
   required_status_checks_strict = false
-  additional_required_status_checks = ["spelling-check", "table-check", "toc-check"]
+  additional_required_status_checks = [
+    "spelling-check",
+    "table-check",
+    "toc-check"
+  ]
   require_conversation_resolution = true
   block_creations = true
 }

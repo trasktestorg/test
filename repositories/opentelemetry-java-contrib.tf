@@ -13,14 +13,21 @@ module "opentelemetry-java-contrib-branch-protection-rule-0" {
   repository_id = module.opentelemetry-java-contrib-repo.node_id
   pattern = "main"
   required_status_checks_strict = false
-  additional_required_status_checks = ["required-status-check", "gradle-wrapper-validation"]
+  additional_required_status_checks = [
+    "gradle-wrapper-validation",
+    "required-status-check"
+  ]
 }
 
 module "opentelemetry-java-contrib-branch-protection-rule-1" {
   source = "../modules/branch-protection-long-term"
   repository_id = module.opentelemetry-java-contrib-repo.node_id
   pattern = "release/*"
-  additional_required_status_checks = ["gradle-wrapper-validation", "required-status-check", "CodeQL"]
+  additional_required_status_checks = [
+    "CodeQL",
+    "gradle-wrapper-validation",
+    "required-status-check"
+  ]
   depends_on = [module.opentelemetry-java-contrib-branch-protection-rule-0]
 }
 

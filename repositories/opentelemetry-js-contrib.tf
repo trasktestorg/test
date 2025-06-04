@@ -12,7 +12,10 @@ module "opentelemetry-js-contrib-branch-protection-rule-0" {
   source = "../modules/branch-protection-long-term"
   repository_id = module.opentelemetry-js-contrib-repo.node_id
   pattern = "main"
-  additional_required_status_checks = ["unit-test (18.19.0)", "unit-test (18)"]
+  additional_required_status_checks = [
+    "unit-test (18)",
+    "unit-test (18.19.0)"
+  ]
   restrict_pushes = false
 }
 

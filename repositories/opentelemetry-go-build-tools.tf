@@ -12,7 +12,10 @@ module "opentelemetry-go-build-tools-branch-protection-rule-0" {
   source = "../modules/branch-protection-long-term"
   repository_id = module.opentelemetry-go-build-tools-repo.node_id
   pattern = "main"
-  additional_required_status_checks = ["check-lint", "check-test-race"]
+  additional_required_status_checks = [
+    "check-lint",
+    "check-test-race"
+  ]
   required_linear_history = true
 }
 

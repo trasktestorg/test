@@ -3,7 +3,15 @@ module "opentelemetry-ruby-repo" {
   name   = "opentelemetry-ruby"
   description = "OpenTelemetry Ruby API & SDK, and related gems"
   homepage_url = "https://opentelemetry.io/"
-  topics = ["telemetry", "distributed-tracing", "metrics", "opentelemetry", "opentelemetry-ruby", "opentelemetry-api", "hacktoberfest"]
+  topics = [
+    "distributed-tracing",
+    "hacktoberfest",
+    "metrics",
+    "opentelemetry",
+    "opentelemetry-api",
+    "opentelemetry-ruby",
+    "telemetry"
+  ]
   has_projects = true
   has_discussions = true
   delete_branch_on_merge = false

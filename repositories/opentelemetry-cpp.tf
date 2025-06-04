@@ -3,7 +3,14 @@ module "opentelemetry-cpp-repo" {
   name   = "opentelemetry-cpp"
   description = "The OpenTelemetry C++ Client"
   homepage_url = "https://opentelemetry.io/"
-  topics = ["distributed-tracing", "metrics", "telemetry", "sdk", "api", "opentelemetry"]
+  topics = [
+    "api",
+    "distributed-tracing",
+    "metrics",
+    "opentelemetry",
+    "sdk",
+    "telemetry"
+  ]
   has_projects = true
   has_discussions = true
   allow_auto_merge = true
@@ -15,7 +22,15 @@ module "opentelemetry-cpp-branch-protection-rule-0" {
   source = "../modules/branch-protection-long-term"
   repository_id = module.opentelemetry-cpp-repo.node_id
   pattern = "main"
-  additional_required_status_checks = ["Bazel", "Bazel Windows", "Bazel on MacOS", "Format", "DocFX check", "markdown-lint", "misspell"]
+  additional_required_status_checks = [
+    "Bazel",
+    "Bazel on MacOS",
+    "Bazel Windows",
+    "DocFX check",
+    "Format",
+    "markdown-lint",
+    "misspell"
+  ]
   required_linear_history = true
 }
 

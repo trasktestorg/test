@@ -16,7 +16,19 @@ module "otel-arrow-branch-protection-rule-0" {
   source = "../modules/branch-protection-long-term"
   repository_id = module.otel-arrow-repo.node_id
   pattern = "main"
-  additional_required_status_checks = ["markdownlint", "test_and_coverage (otap-dataflow)", "fmt (otap-dataflow)", "clippy (otap-dataflow)", "deny (otap-dataflow)", "structure_check (otap-dataflow)", "bench (otap-dataflow)", "docs (otap-dataflow)", "sanity", "test_and_coverage (pkg/otel)", "gen_otelarrowcol"]
+  additional_required_status_checks = [
+    "bench (otap-dataflow)",
+    "clippy (otap-dataflow)",
+    "deny (otap-dataflow)",
+    "docs (otap-dataflow)",
+    "fmt (otap-dataflow)",
+    "gen_otelarrowcol",
+    "markdownlint",
+    "sanity",
+    "structure_check (otap-dataflow)",
+    "test_and_coverage (otap-dataflow)",
+    "test_and_coverage (pkg/otel)"
+  ]
   block_creations = true
 }
 

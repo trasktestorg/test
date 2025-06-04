@@ -2,7 +2,11 @@ module "opentelemetry-network-repo" {
   source = "../modules/repository"
   name   = "opentelemetry-network"
   description = "eBPF Collector"
-  topics = ["ebpf", "open-telemetry", "opentelemetry"]
+  topics = [
+    "ebpf",
+    "open-telemetry",
+    "opentelemetry"
+  ]
   has_wiki = true
   has_projects = true
   allow_merge_commit = true

@@ -13,7 +13,11 @@ module "semantic-conventions-java-branch-protection-rule-0" {
   repository_id = module.semantic-conventions-java-repo.node_id
   pattern = "main"
   required_status_checks_strict = false
-  additional_required_status_checks = ["required-status-check", "gradle-wrapper-validation", "CodeQL"]
+  additional_required_status_checks = [
+    "CodeQL",
+    "gradle-wrapper-validation",
+    "required-status-check"
+  ]
 }
 
 module "semantic-conventions-java-branch-protection-rule-1" {
@@ -21,7 +25,11 @@ module "semantic-conventions-java-branch-protection-rule-1" {
   repository_id = module.semantic-conventions-java-repo.node_id
   pattern = "release/*"
   required_status_checks_strict = false
-  additional_required_status_checks = ["required-status-check", "gradle-wrapper-validation", "CodeQL"]
+  additional_required_status_checks = [
+    "CodeQL",
+    "gradle-wrapper-validation",
+    "required-status-check"
+  ]
   depends_on = [module.semantic-conventions-java-branch-protection-rule-0]
 }
 

@@ -13,7 +13,9 @@ module "opentelemetry-android-branch-protection-rule-0" {
   repository_id = module.opentelemetry-android-repo.node_id
   pattern = "main"
   required_status_checks_strict = false
-  additional_required_status_checks = ["required-status-check"]
+  additional_required_status_checks = [
+    "required-status-check"
+  ]
   block_creations = true
 }
 
@@ -36,7 +38,9 @@ module "opentelemetry-android-branch-protection-rule-3" {
   repository_id = module.opentelemetry-android-repo.node_id
   pattern = "release/*"
   required_status_checks_strict = false
-  additional_required_status_checks = ["required-status-check"]
+  additional_required_status_checks = [
+    "required-status-check"
+  ]
   depends_on = [module.opentelemetry-android-branch-protection-rule-2]
 }
 

@@ -2,7 +2,10 @@ module "opentelemetry-collector-contrib-repo" {
   source = "../modules/repository"
   name   = "opentelemetry-collector-contrib"
   description = "Contrib repository for the OpenTelemetry Collector"
-  topics = ["opentelemetry", "open-telemetry"]
+  topics = [
+    "open-telemetry",
+    "opentelemetry"
+  ]
   has_projects = true
   has_discussions = true
   squash_merge_commit_title = "PR_TITLE"
@@ -18,7 +21,18 @@ module "opentelemetry-collector-contrib-branch-protection-rule-0" {
   repository_id = module.opentelemetry-collector-contrib-repo.node_id
   pattern = "main"
   required_status_checks_strict = false
-  additional_required_status_checks = ["integration-tests", "lint", "changelog", "correctness-traces", "correctness-metrics", "checks", "check-collector-module-version", "windows-unittest", "unittest", "scoped-tests"]
+  additional_required_status_checks = [
+    "changelog",
+    "check-collector-module-version",
+    "checks",
+    "correctness-metrics",
+    "correctness-traces",
+    "integration-tests",
+    "lint",
+    "scoped-tests",
+    "unittest",
+    "windows-unittest"
+  ]
   block_creations = true
 }
 

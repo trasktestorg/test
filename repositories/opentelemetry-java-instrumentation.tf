@@ -17,7 +17,11 @@ module "opentelemetry-java-instrumentation-branch-protection-rule-0" {
   repository_id = module.opentelemetry-java-instrumentation-repo.node_id
   pattern = "main"
   required_status_checks_strict = false
-  additional_required_status_checks = ["required-status-check", "CodeQL", "gradle-wrapper-validation"]
+  additional_required_status_checks = [
+    "CodeQL",
+    "gradle-wrapper-validation",
+    "required-status-check"
+  ]
 }
 
 module "opentelemetry-java-instrumentation-branch-protection-rule-1" {
@@ -25,7 +29,11 @@ module "opentelemetry-java-instrumentation-branch-protection-rule-1" {
   repository_id = module.opentelemetry-java-instrumentation-repo.node_id
   pattern = "release/*"
   required_status_checks_strict = false
-  additional_required_status_checks = ["gradle-wrapper-validation", "required-status-check", "CodeQL"]
+  additional_required_status_checks = [
+    "CodeQL",
+    "gradle-wrapper-validation",
+    "required-status-check"
+  ]
   depends_on = [module.opentelemetry-java-instrumentation-branch-protection-rule-0]
 }
 

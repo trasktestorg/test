@@ -17,7 +17,13 @@ module "opentelemetry-sandbox-web-js-branch-protection-rule-0" {
   source = "../modules/branch-protection-fallback"
   repository_id = module.opentelemetry-sandbox-web-js-repo.node_id
   pattern = "**/**"
-  additional_required_status_checks = ["node-tests (16)", "node-tests (18)", "node-tests (20)", "node-windows-tests (18)", "node-windows-tests (20)"]
+  additional_required_status_checks = [
+    "node-tests (16)",
+    "node-tests (18)",
+    "node-tests (20)",
+    "node-windows-tests (18)",
+    "node-windows-tests (20)"
+  ]
   require_conversation_resolution = true
   restrict_pushes = true
   block_creations = true

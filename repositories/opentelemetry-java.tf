@@ -2,7 +2,9 @@ module "opentelemetry-java-repo" {
   source = "../modules/repository"
   name   = "opentelemetry-java"
   description = "OpenTelemetry Java SDK"
-  topics = ["opentelemetry"]
+  topics = [
+    "opentelemetry"
+  ]
   has_projects = true
   has_discussions = true
   squash_merge_commit_title = "PR_TITLE"

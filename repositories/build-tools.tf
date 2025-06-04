@@ -2,7 +2,9 @@ module "build-tools-repo" {
   source = "../modules/repository"
   name   = "build-tools"
   description = "Building tools provided by OpenTelemetry"
-  topics = ["opentelemetry"]
+  topics = [
+    "opentelemetry"
+  ]
   has_wiki = true
   has_projects = true
   squash_merge_commit_title = "PR_TITLE"

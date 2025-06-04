@@ -3,7 +3,20 @@ module "opentelemetry-demo-repo" {
   name   = "opentelemetry-demo"
   description = "This repository contains the OpenTelemetry Astronomy Shop, a microservice-based distributed system intended to illustrate the implementation of OpenTelemetry in a near real-world environment."
   homepage_url = "https://opentelemetry.io/docs/demo/"
-  topics = ["jaeger", "opentelemetry", "opentelemetry-collector", "opentelemetry-dotnet", "opentelemetry-erlang", "opentelemetry-go", "opentelemetry-java-agent", "opentelemetry-javascript", "opentelemetry-python", "opentelemetry-rust", "prometheus", "demo"]
+  topics = [
+    "demo",
+    "jaeger",
+    "opentelemetry",
+    "opentelemetry-collector",
+    "opentelemetry-dotnet",
+    "opentelemetry-erlang",
+    "opentelemetry-go",
+    "opentelemetry-java-agent",
+    "opentelemetry-javascript",
+    "opentelemetry-python",
+    "opentelemetry-rust",
+    "prometheus"
+  ]
   has_projects = true
   has_discussions = true
   allow_update_branch = true
@@ -24,7 +37,12 @@ module "opentelemetry-demo-branch-protection-rule-1" {
   source = "../modules/branch-protection-long-term"
   repository_id = module.opentelemetry-demo-repo.node_id
   pattern = "main"
-  additional_required_status_checks = ["markdownlint", "yamllint", "misspell", "sanity"]
+  additional_required_status_checks = [
+    "markdownlint",
+    "misspell",
+    "sanity",
+    "yamllint"
+  ]
   require_conversation_resolution = true
   block_creations = true
   depends_on = [module.opentelemetry-demo-branch-protection-rule-0]

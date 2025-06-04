@@ -2,7 +2,14 @@ module "opentelemetry-collector-repo" {
   source = "../modules/repository"
   name   = "opentelemetry-collector"
   description = "OpenTelemetry Collector"
-  topics = ["opentelemetry", "open-telemetry", "telemetry", "metrics", "monitoring", "observability"]
+  topics = [
+    "metrics",
+    "monitoring",
+    "observability",
+    "open-telemetry",
+    "opentelemetry",
+    "telemetry"
+  ]
   has_wiki = true
   has_projects = true
   has_discussions = true
@@ -19,7 +26,16 @@ module "opentelemetry-collector-branch-protection-rule-0" {
   repository_id = module.opentelemetry-collector-repo.node_id
   pattern = "main"
   required_status_checks_strict = false
-  additional_required_status_checks = ["lint", "changelog", "checks", "contrib_tests", "unittest", "Check", "windows-unittest (windows-2025)", "windows-unittest (windows-2022)"]
+  additional_required_status_checks = [
+    "changelog",
+    "Check",
+    "checks",
+    "contrib_tests",
+    "lint",
+    "unittest",
+    "windows-unittest (windows-2022)",
+    "windows-unittest (windows-2025)"
+  ]
   block_creations = true
 }
 

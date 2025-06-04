@@ -2,7 +2,13 @@ module "opentelemetry-js-repo" {
   source = "../modules/repository"
   name   = "opentelemetry-js"
   description = "OpenTelemetry JavaScript Client"
-  topics = ["telemetry", "distributed-tracing", "metrics", "monitoring", "api"]
+  topics = [
+    "api",
+    "distributed-tracing",
+    "metrics",
+    "monitoring",
+    "telemetry"
+  ]
   has_projects = true
   has_discussions = true
   squash_merge_commit_title = "PR_TITLE"
@@ -14,7 +20,14 @@ module "opentelemetry-js-branch-protection-rule-0" {
   source = "../modules/branch-protection-long-term"
   repository_id = module.opentelemetry-js-repo.node_id
   pattern = "main"
-  additional_required_status_checks = ["browser-tests", "node-tests (18)", "node-tests (20)", "node-windows-tests", "webworker-tests", "node-tests (22)"]
+  additional_required_status_checks = [
+    "browser-tests",
+    "node-tests (18)",
+    "node-tests (20)",
+    "node-tests (22)",
+    "node-windows-tests",
+    "webworker-tests"
+  ]
   restrict_pushes = false
 }
 

@@ -3,7 +3,14 @@ module "weaver-repo" {
   name   = "weaver"
   description = "OTel Weaver lets you easily develop, validate, document, and deploy semantic conventions"
   homepage_url = ""
-  topics = ["codegen", "documentation", "observability", "opentelemetry", "policy", "semconv"]
+  topics = [
+    "codegen",
+    "documentation",
+    "observability",
+    "opentelemetry",
+    "policy",
+    "semconv"
+  ]
   has_wiki = true
   has_projects = true
   has_discussions = true
@@ -15,7 +22,16 @@ module "weaver-branch-protection-rule-0" {
   source = "../modules/branch-protection-long-term"
   repository_id = module.weaver-repo.node_id
   pattern = "main"
-  additional_required_status_checks = ["Spell Check with Typos", "Test (ubuntu-latest, stable)", "Validate workspace", "lockfile", "Check MSRV", "Rustfmt", "Check external types", "Clippy"]
+  additional_required_status_checks = [
+    "Check external types",
+    "Check MSRV",
+    "Clippy",
+    "lockfile",
+    "Rustfmt",
+    "Spell Check with Typos",
+    "Test (ubuntu-latest, stable)",
+    "Validate workspace"
+  ]
   block_creations = true
 }
 

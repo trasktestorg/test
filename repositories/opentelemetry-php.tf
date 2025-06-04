@@ -3,7 +3,15 @@ module "opentelemetry-php-repo" {
   name   = "opentelemetry-php"
   description = "The OpenTelemetry PHP Library"
   homepage_url = "https://opentelemetry.io/docs/instrumentation/php/"
-  topics = ["opentelemetry", "open-telemetry", "opentelemetry-php", "logging", "metrics", "php", "tracing"]
+  topics = [
+    "logging",
+    "metrics",
+    "open-telemetry",
+    "opentelemetry",
+    "opentelemetry-php",
+    "php",
+    "tracing"
+  ]
   has_wiki = true
   has_projects = true
   has_pages = true

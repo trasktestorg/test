@@ -20,7 +20,9 @@ module "admin-branch-protection-rule-0" {
   # (https://jira.linuxfoundation.org/plugins/servlet/desk/portal/4/SUPPORT-35724)
   required_status_checks = false
   required_status_checks_no_easy_cla = true
-  additional_required_status_checks = ["terraform"]
+  additional_required_status_checks = [
+    "terraform"
+  ]
 }
 
 module "admin-branch-protection-rule-1" {

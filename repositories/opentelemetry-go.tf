@@ -3,7 +3,12 @@ module "opentelemetry-go-repo" {
   name   = "opentelemetry-go"
   description = "OpenTelemetry Go API and SDK"
   homepage_url = "https://opentelemetry.io/docs/languages/go"
-  topics = ["tracing", "metrics", "opentelemetry", "logging"]
+  topics = [
+    "logging",
+    "metrics",
+    "opentelemetry",
+    "tracing"
+  ]
   has_projects = true
   has_discussions = true
   squash_merge_commit_title = "PR_TITLE"
@@ -16,7 +21,12 @@ module "opentelemetry-go-branch-protection-rule-0" {
   repository_id = module.opentelemetry-go-repo.node_id
   pattern = "main"
   restrict_dismissals = true
-  additional_required_status_checks = ["lint", "test-coverage", "test-race", "test-compatibility"]
+  additional_required_status_checks = [
+    "lint",
+    "test-compatibility",
+    "test-coverage",
+    "test-race"
+  ]
   require_conversation_resolution = true
 }
 

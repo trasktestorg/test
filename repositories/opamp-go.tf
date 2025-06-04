@@ -16,7 +16,9 @@ module "opamp-go-branch-protection-rule-0" {
   repository_id = module.opamp-go-repo.node_id
   pattern = "main"
   required_status_checks_strict = false
-  additional_required_status_checks = ["build-and-test"]
+  additional_required_status_checks = [
+    "build-and-test"
+  ]
   required_linear_history = true
   block_creations = true
 }
