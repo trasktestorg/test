@@ -1,0 +1,33 @@
+module "repo-opentelemetry-go-vanityurls" {
+  source = "./modules/repository"
+  name   = "opentelemetry-go-vanityurls"
+  description = "Vanityurls config for go.opentelemetry.io subdomain"
+  homepage_url = ""
+  has_wiki = true
+  has_projects = true
+}
+
+module "branch-protection-rule-opentelemetry-go-vanityurls-0" {
+  source = "./modules/branch-protection-long-term"
+  repository_id = module.repo-opentelemetry-go-vanityurls.node_id
+  pattern = "main"
+  required_status_checks_strict = false
+}
+
+module "branch-protection-rule-opentelemetry-go-vanityurls-1" {
+  source = "./modules/branch-protection-feature"
+  repository_id = module.repo-opentelemetry-go-vanityurls.node_id
+  pattern = "renovate/**/*"
+  depends_on = [module.branch-protection-rule-opentelemetry-go-vanityurls-0]
+}
+
+module "branch-protection-rule-opentelemetry-go-vanityurls-2" {
+  source = "./modules/branch-protection-fallback"
+  repository_id = module.repo-opentelemetry-go-vanityurls.node_id
+  pattern = "**/**"
+  required_pull_request_reviews = true
+  restrict_pushes = true
+  block_creations = true
+  depends_on = [module.branch-protection-rule-opentelemetry-go-vanityurls-1]
+}
+
