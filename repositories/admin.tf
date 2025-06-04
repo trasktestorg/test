@@ -16,8 +16,8 @@ module "admin-branch-protection-rule-0" {
   # blow things away when they aren't in sync
   required_approving_review_count = 0
   require_code_owner_reviews = false
-  # EasyCLA is not running in merge queue on private repo
-  # submitted EasyCLA ticket: https://jira.linuxfoundation.org/plugins/servlet/desk/portal/4/SUPPORT-35724
+  # EasyCLA isn't supported on private repos
+  # (https://jira.linuxfoundation.org/plugins/servlet/desk/portal/4/SUPPORT-35724)
   required_status_checks = false
   required_status_checks_no_easy_cla = true
   additional_required_status_checks = ["terraform"]
