@@ -6,7 +6,7 @@
 /repositories/cpp-build-tools.tf: @open-telemetry/admins @open-telemetry/cpp-maintainers
 /repositories/gh-manager.tf: @open-telemetry/admins @open-telemetry/project-infra
 /repositories/github.tf: @open-telemetry/admins @open-telemetry/governance-committee @open-telemetry/technical-committee
-/repositories/govanityurls.tf: @open-telemetry/admins @open-telemetry/collector-contrib-maintainers @open-telemetry/collector-maintainers @open-telemetry/go-instrumentation-maintainers @open-telemetry/go-maintainers
+/repositories/govanityurls.tf: @open-telemetry/admins @open-telemetry/collector-contrib-maintainers @open-telemetry/collector-maintainers @open-telemetry/go-instrumentation-maintainers @open-telemetry/go-maintainers       
 /repositories/opamp-go.tf: @open-telemetry/admins @open-telemetry/opamp-go-maintainers
 /repositories/opamp-spec.tf: @open-telemetry/admins @open-telemetry/opamp-spec-maintainers
 /repositories/opentelemetry-android.tf: @open-telemetry/admins @open-telemetry/android-maintainers
@@ -23,7 +23,7 @@
 /repositories/opentelemetry-ebpf-instrumentation.tf: @open-telemetry/admins @open-telemetry/ebpf-instrumentation-maintainers
 /repositories/opentelemetry-ebpf-profiler.tf: @open-telemetry/admins @open-telemetry/ebpf-profiler-maintainers
 /repositories/opentelemetry-erlang.tf: @open-telemetry/admins @open-telemetry/erlang-maintainers
-/repositories/opentelemetry-erlang-contrib.tf: @open-telemetry/admins @open-telemetry/erlang-contrib-maintainers @open-telemetry/erlang-maintainers
+/repositories/opentelemetry-erlang-contrib.tf: @open-telemetry/admins @open-telemetry/erlang-contrib-maintainers @open-telemetry/erlang-maintainers 
 /repositories/opentelemetry-go.tf: @open-telemetry/admins @open-telemetry/go-maintainers
 /repositories/opentelemetry-go-build-tools.tf: @open-telemetry/admins @open-telemetry/collector-contrib-maintainers @open-telemetry/collector-maintainers @open-telemetry/go-maintainers
 /repositories/opentelemetry-go-compile-instrumentation.tf: @open-telemetry/admins @open-telemetry/go-compile-instrumentation-maintainers
@@ -48,11 +48,11 @@
 /repositories/opentelemetry-php-instrumentation.tf: @open-telemetry/admins @open-telemetry/php-maintainers
 /repositories/opentelemetry-proto.tf: @open-telemetry/admins @open-telemetry/technical-committee
 /repositories/opentelemetry-proto-go.tf: @open-telemetry/admins @open-telemetry/go-maintainers @open-telemetry/proto-go-maintainers
-/repositories/opentelemetry-proto-java.tf: @open-telemetry/admins @open-telemetry/java-instrumentation-maintainers @open-telemetry/java-maintainers
+/repositories/opentelemetry-proto-java.tf: @open-telemetry/admins @open-telemetry/java-instrumentation-maintainers @open-telemetry/java-maintainers 
 /repositories/opentelemetry-python.tf: @open-telemetry/admins @open-telemetry/python-maintainers
 /repositories/opentelemetry-python-contrib.tf: @open-telemetry/admins @open-telemetry/opentelemetry-python-contrib-maintainers
 /repositories/opentelemetry-ruby.tf: @open-telemetry/admins @open-telemetry/ruby-maintainers
-/repositories/opentelemetry-ruby-contrib.tf: @open-telemetry/admins @open-telemetry/ruby-contrib-maintainers @open-telemetry/ruby-maintainers
+/repositories/opentelemetry-ruby-contrib.tf: @open-telemetry/admins @open-telemetry/ruby-contrib-maintainers @open-telemetry/ruby-maintainers       
 /repositories/opentelemetry-rust.tf: @open-telemetry/admins @open-telemetry/rust-maintainers
 /repositories/opentelemetry-rust-contrib.tf: @open-telemetry/admins @open-telemetry/rust-maintainers
 /repositories/opentelemetry-sandbox-web-js.tf: @open-telemetry/admins @open-telemetry/sandbox-web-js-maintainers
