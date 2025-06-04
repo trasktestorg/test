@@ -8,6 +8,45 @@ module "repo-opentelemetry-go-build-tools" {
   allow_rebase_merge = true
 }
 
+resource "github_repository_collaborators" "opentelemetry-go-build-tools" {
+  repository = "opentelemetry-go-build-tools"
+
+  team {
+    team_id = github_team.collector-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.collector-contrib-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.collector-contrib-maintainers.id
+    permission = "admin"
+  }
+
+  team {
+    team_id = github_team.collector-maintainers.id
+    permission = "admin"
+  }
+
+  team {
+    team_id = github_team.go-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.go-maintainers.id
+    permission = "admin"
+  }
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-go-build-tools-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-go-build-tools.node_id

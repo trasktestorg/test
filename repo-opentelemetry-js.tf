@@ -16,6 +16,30 @@ module "repo-opentelemetry-js" {
   has_pages = true
 }
 
+resource "github_repository_collaborators" "opentelemetry-js" {
+  repository = "opentelemetry-js"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.javascript-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.javascript-maintainers.id
+    permission = "admin"
+  }
+
+  team {
+    team_id = github_team.javascript-triagers.id
+    permission = "triage"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-js-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-js.node_id

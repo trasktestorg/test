@@ -8,6 +8,25 @@ module "repo-opentelemetry-android" {
   delete_branch_on_merge = false
 }
 
+resource "github_repository_collaborators" "opentelemetry-android" {
+  repository = "opentelemetry-android"
+
+  team {
+    team_id = github_team.android-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.android-maintainers.id
+    permission = "admin"
+  }
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-android-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-android.node_id

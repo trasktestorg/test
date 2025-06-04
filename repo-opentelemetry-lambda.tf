@@ -12,6 +12,25 @@ module "repo-opentelemetry-lambda" {
   allow_auto_merge = true
 }
 
+resource "github_repository_collaborators" "opentelemetry-lambda" {
+  repository = "opentelemetry-lambda"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.lambda-extension-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.lambda-extension-maintainers.id
+    permission = "admin"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-lambda-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-lambda.node_id

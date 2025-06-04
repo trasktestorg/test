@@ -10,6 +10,35 @@ module "repo-opentelemetry-helm-charts" {
   has_pages = true
 }
 
+resource "github_repository_collaborators" "opentelemetry-helm-charts" {
+  repository = "opentelemetry-helm-charts"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.helm-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.helm-maintainers.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.helm-triagers.id
+    permission = "triage"
+  }
+
+  user {
+    username = "dmitryax"
+    permission = "admin"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-helm-charts-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-helm-charts.node_id

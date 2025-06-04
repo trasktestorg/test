@@ -17,6 +17,20 @@ module "repo-opentelemetry-ebpf-profiler" {
   secret_scanning_push_protection_status = "enabled"
 }
 
+resource "github_repository_collaborators" "opentelemetry-ebpf-profiler" {
+  repository = "opentelemetry-ebpf-profiler"
+
+  team {
+    team_id = github_team.ebpf-profiler-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.ebpf-profiler-maintainers.id
+    permission = "OpenTelemetryMaintainer"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-ebpf-profiler-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-ebpf-profiler.node_id

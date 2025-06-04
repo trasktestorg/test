@@ -8,6 +8,25 @@ module "repo-cpp-build-tools" {
   delete_branch_on_merge = false
 }
 
+resource "github_repository_collaborators" "cpp-build-tools" {
+  repository = "cpp-build-tools"
+
+  team {
+    team_id = github_team.cpp-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.cpp-maintainers.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+}
+
 module "branch-protection-rule-cpp-build-tools-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-cpp-build-tools.node_id

@@ -21,6 +21,30 @@ module "repo-opentelemetry-collector" {
   allow_auto_merge = true
 }
 
+resource "github_repository_collaborators" "opentelemetry-collector" {
+  repository = "opentelemetry-collector"
+
+  team {
+    team_id = github_team.collector-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.collector-maintainers.id
+    permission = "OpenTelemetryMaintainer"
+  }
+
+  team {
+    team_id = github_team.collector-triagers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-collector-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-collector.node_id

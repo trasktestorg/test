@@ -14,6 +14,25 @@ module "repo-opentelemetry-sqlcommenter" {
   pages_path = "/docs"
 }
 
+resource "github_repository_collaborators" "opentelemetry-sqlcommenter" {
+  repository = "opentelemetry-sqlcommenter"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.sqlcommenter-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.sqlcommenter-maintainers.id
+    permission = "admin"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-sqlcommenter-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-sqlcommenter.node_id

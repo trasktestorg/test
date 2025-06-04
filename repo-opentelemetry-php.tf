@@ -20,6 +20,45 @@ module "repo-opentelemetry-php" {
   pages_path = "/docs"
 }
 
+resource "github_repository_collaborators" "opentelemetry-php" {
+  repository = "opentelemetry-php"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.php-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.php-maintainers.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.php-triagers.id
+    permission = "push"
+  }
+
+  user {
+    username = "bobstrecansky"
+    permission = "admin"
+  }
+
+  user {
+    username = "brettmc"
+    permission = "admin"
+  }
+
+  user {
+    username = "pdelewski"
+    permission = "admin"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-php-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-php.node_id

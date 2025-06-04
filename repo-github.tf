@@ -6,6 +6,20 @@ module "repo-github" {
   vulnerability_alerts = false
 }
 
+resource "github_repository_collaborators" "github" {
+  repository = ".github"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.technical-committee.id
+    permission = "maintain"
+  }
+}
+
 module "branch-protection-rule-github-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-github.node_id

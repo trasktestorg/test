@@ -8,6 +8,35 @@ module "repo-semantic-conventions-java" {
   vulnerability_alerts = false
 }
 
+resource "github_repository_collaborators" "semantic-conventions-java" {
+  repository = "semantic-conventions-java"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.java-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.java-instrumentation-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.java-instrumentation-maintainers.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.java-maintainers.id
+    permission = "maintain"
+  }
+}
+
 module "branch-protection-rule-semantic-conventions-java-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-semantic-conventions-java.node_id

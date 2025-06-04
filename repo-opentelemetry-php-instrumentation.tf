@@ -9,6 +9,40 @@ module "repo-opentelemetry-php-instrumentation" {
   vulnerability_alerts = false
 }
 
+resource "github_repository_collaborators" "opentelemetry-php-instrumentation" {
+  repository = "opentelemetry-php-instrumentation"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.php-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.php-maintainers.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.php-triagers.id
+    permission = "triage"
+  }
+
+  user {
+    username = "bobstrecansky"
+    permission = "admin"
+  }
+
+  user {
+    username = "brettmc"
+    permission = "admin"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-php-instrumentation-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-php-instrumentation.node_id

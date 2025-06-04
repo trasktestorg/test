@@ -7,6 +7,45 @@ module "repo-opentelemetry-php-contrib" {
   secret_scanning_status = "enabled"
 }
 
+resource "github_repository_collaborators" "opentelemetry-php-contrib" {
+  repository = "opentelemetry-php-contrib"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.php-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.php-maintainers.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.php-triagers.id
+    permission = "triage"
+  }
+
+  user {
+    username = "bobstrecansky"
+    permission = "admin"
+  }
+
+  user {
+    username = "brettmc"
+    permission = "admin"
+  }
+
+  user {
+    username = "pdelewski"
+    permission = "admin"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-php-contrib-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-php-contrib.node_id

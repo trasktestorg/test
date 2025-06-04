@@ -18,6 +18,30 @@ module "repo-weaver" {
   vulnerability_alerts = false
 }
 
+resource "github_repository_collaborators" "weaver" {
+  repository = "weaver"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.specs-semconv-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.weaver-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.weaver-maintainers.id
+    permission = "maintain"
+  }
+}
+
 module "branch-protection-rule-weaver-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-weaver.node_id

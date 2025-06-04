@@ -20,6 +20,40 @@ module "repo-opentelemetry-ruby-contrib" {
   has_pages = true
 }
 
+resource "github_repository_collaborators" "opentelemetry-ruby-contrib" {
+  repository = "opentelemetry-ruby-contrib"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.ruby-contrib-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.ruby-contrib-maintainers.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.ruby-maintainers.id
+    permission = "maintain"
+  }
+
+  user {
+    username = "arielvalentin"
+    permission = "admin"
+  }
+
+  user {
+    username = "mwear"
+    permission = "admin"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-ruby-contrib-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-ruby-contrib.node_id

@@ -10,6 +10,35 @@ module "repo-opentelemetry-proto" {
   has_projects = true
 }
 
+resource "github_repository_collaborators" "opentelemetry-proto" {
+  repository = "opentelemetry-proto"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.profiling-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.spec-sponsors.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.specs-triagers.id
+    permission = "triage"
+  }
+
+  team {
+    team_id = github_team.technical-committee.id
+    permission = "maintain"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-proto-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-proto.node_id

@@ -7,6 +7,20 @@ module "repo-assign-reviewers-action" {
   delete_branch_on_merge = false
 }
 
+resource "github_repository_collaborators" "assign-reviewers-action" {
+  repository = "assign-reviewers-action"
+
+  team {
+    team_id = github_team.assign-reviewers-action-maintainers.id
+    permission = "admin"
+  }
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+}
+
 module "branch-protection-rule-assign-reviewers-action-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-assign-reviewers-action.node_id

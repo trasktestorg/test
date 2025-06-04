@@ -7,6 +7,50 @@ module "repo-govanityurls" {
   has_projects = true
 }
 
+resource "github_repository_collaborators" "govanityurls" {
+  repository = "govanityurls"
+
+  team {
+    team_id = github_team.collector-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.collector-contrib-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.collector-contrib-maintainers.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.collector-maintainers.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.go-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.go-instrumentation-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.go-instrumentation-maintainers.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.go-maintainers.id
+    permission = "maintain"
+  }
+}
+
 module "branch-protection-rule-govanityurls-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-govanityurls.node_id

@@ -7,6 +7,30 @@ module "repo-opentelemetry-go-vanityurls" {
   has_projects = true
 }
 
+resource "github_repository_collaborators" "opentelemetry-go-vanityurls" {
+  repository = "opentelemetry-go-vanityurls"
+
+  team {
+    team_id = github_team.collector-maintainers.id
+    permission = "admin"
+  }
+
+  team {
+    team_id = github_team.go-maintainers.id
+    permission = "admin"
+  }
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  user {
+    username = "punya"
+    permission = "admin"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-go-vanityurls-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-go-vanityurls.node_id

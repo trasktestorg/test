@@ -11,6 +11,25 @@ module "repo-opamp-spec" {
   vulnerability_alerts = false
 }
 
+resource "github_repository_collaborators" "opamp-spec" {
+  repository = "opamp-spec"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.opamp-spec-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.opamp-spec-maintainers.id
+    permission = "maintain"
+  }
+}
+
 module "branch-protection-rule-opamp-spec-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opamp-spec.node_id

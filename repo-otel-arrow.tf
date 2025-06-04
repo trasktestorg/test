@@ -12,6 +12,30 @@ module "repo-otel-arrow" {
   secret_scanning_push_protection_status = "enabled"
 }
 
+resource "github_repository_collaborators" "otel-arrow" {
+  repository = "otel-arrow"
+
+  team {
+    team_id = github_team.arrow-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.arrow-maintainers.id
+    permission = "admin"
+  }
+
+  team {
+    team_id = github_team.arrow-triagers.id
+    permission = "triage"
+  }
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+}
+
 module "branch-protection-rule-otel-arrow-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-otel-arrow.node_id

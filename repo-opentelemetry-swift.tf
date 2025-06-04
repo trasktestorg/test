@@ -10,6 +10,30 @@ module "repo-opentelemetry-swift" {
   delete_branch_on_merge = false
 }
 
+resource "github_repository_collaborators" "opentelemetry-swift" {
+  repository = "opentelemetry-swift"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.swift-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.swift-maintainers.id
+    permission = "admin"
+  }
+
+  team {
+    team_id = github_team.swift-triagers.id
+    permission = "triage"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-swift-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-swift.node_id

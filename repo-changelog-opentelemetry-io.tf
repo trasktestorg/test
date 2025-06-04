@@ -8,6 +8,25 @@ module "repo-changelog-opentelemetry-io" {
   allow_rebase_merge = true
 }
 
+resource "github_repository_collaborators" "changelog-opentelemetry-io" {
+  repository = "changelog.opentelemetry.io"
+
+  user {
+    username = "trask"
+    permission = "admin"
+  }
+
+  user {
+    username = "austinlparker"
+    permission = "admin"
+  }
+
+  user {
+    username = "adrielp"
+    permission = "push"
+  }
+}
+
 module "branch-protection-rule-changelog-opentelemetry-io-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-changelog-opentelemetry-io.node_id

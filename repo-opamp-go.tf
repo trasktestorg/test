@@ -11,6 +11,25 @@ module "repo-opamp-go" {
   vulnerability_alerts = false
 }
 
+resource "github_repository_collaborators" "opamp-go" {
+  repository = "opamp-go"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.opamp-go-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.opamp-go-maintainers.id
+    permission = "maintain"
+  }
+}
+
 module "branch-protection-rule-opamp-go-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opamp-go.node_id

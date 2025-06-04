@@ -12,6 +12,30 @@ module "repo-opentelemetry-network-build-tools" {
   vulnerability_alerts = false
 }
 
+resource "github_repository_collaborators" "opentelemetry-network-build-tools" {
+  repository = "opentelemetry-network-build-tools"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.network-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.network-maintainers.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.network-triagers.id
+    permission = "triage"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-network-build-tools-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-network-build-tools.node_id

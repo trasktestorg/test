@@ -12,6 +12,30 @@ module "repo-opentelemetry-proto-java" {
   vulnerability_alerts = false
 }
 
+resource "github_repository_collaborators" "opentelemetry-proto-java" {
+  repository = "opentelemetry-proto-java"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.java-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.java-instrumentation-maintainers.id
+    permission = "admin"
+  }
+
+  team {
+    team_id = github_team.java-maintainers.id
+    permission = "admin"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-proto-java-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-proto-java.node_id

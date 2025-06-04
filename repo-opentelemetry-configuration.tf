@@ -7,6 +7,25 @@ module "repo-opentelemetry-configuration" {
   has_projects = true
 }
 
+resource "github_repository_collaborators" "opentelemetry-configuration" {
+  repository = "opentelemetry-configuration"
+
+  team {
+    team_id = github_team.configuration-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.configuration-maintainers.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-configuration-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-configuration.node_id

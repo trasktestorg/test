@@ -8,6 +8,25 @@ module "repo-opentelemetry-erlang" {
   allow_squash_merge = false
 }
 
+resource "github_repository_collaborators" "opentelemetry-erlang" {
+  repository = "opentelemetry-erlang"
+
+  team {
+    team_id = github_team.erlang-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.erlang-maintainers.id
+    permission = "admin"
+  }
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-erlang-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-erlang.node_id

@@ -7,6 +7,15 @@ module "repo-gh-manager" {
   has_projects = true
 }
 
+resource "github_repository_collaborators" "gh-manager" {
+  repository = "gh-manager"
+
+  team {
+    team_id = github_team.project-infra.id
+    permission = "admin"
+  }
+}
+
 module "branch-protection-rule-gh-manager-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-gh-manager.node_id

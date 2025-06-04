@@ -7,6 +7,35 @@ module "repo-opentelemetry-cpp-contrib" {
   vulnerability_alerts = false
 }
 
+resource "github_repository_collaborators" "opentelemetry-cpp-contrib" {
+  repository = "opentelemetry-cpp-contrib"
+
+  team {
+    team_id = github_team.cpp-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.cpp-contrib-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.cpp-contrib-maintainers.id
+    permission = "admin"
+  }
+
+  team {
+    team_id = github_team.cpp-maintainers.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-cpp-contrib-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-cpp-contrib.node_id

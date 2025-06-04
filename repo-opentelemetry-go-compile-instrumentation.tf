@@ -9,6 +9,35 @@ module "repo-opentelemetry-go-compile-instrumentation" {
   secret_scanning_push_protection_status = "enabled"
 }
 
+resource "github_repository_collaborators" "opentelemetry-go-compile-instrumentation" {
+  repository = "opentelemetry-go-compile-instrumentation"
+
+  team {
+    team_id = github_team.go-compile-instrumentation-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.go-compile-instrumentation-maintainers.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.go-compile-instrumentation-triagers.id
+    permission = "triage"
+  }
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  user {
+    username = "opentelemetrybot"
+    permission = "push"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-go-compile-instrumentation-0" {
   source = "./modules/branch-protection-fallback"
   repository_id = module.repo-opentelemetry-go-compile-instrumentation.node_id

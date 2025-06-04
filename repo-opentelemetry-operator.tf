@@ -13,6 +13,45 @@ module "repo-opentelemetry-operator" {
   allow_auto_merge = true
 }
 
+resource "github_repository_collaborators" "opentelemetry-operator" {
+  repository = "opentelemetry-operator"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.operator-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.operator-maintainers.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.operator-ta-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.operator-triagers.id
+    permission = "triage"
+  }
+
+  user {
+    username = "openshift-ci-robot"
+    permission = "pull"
+  }
+
+  user {
+    username = "openshift-merge-robot"
+    permission = "pull"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-operator-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-operator.node_id

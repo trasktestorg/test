@@ -12,6 +12,35 @@ module "repo-opentelemetry-java-instrumentation" {
   has_pages = true
 }
 
+resource "github_repository_collaborators" "opentelemetry-java-instrumentation" {
+  repository = "opentelemetry-java-instrumentation"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.java-instrumentation-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.java-instrumentation-maintainers.id
+    permission = "admin"
+  }
+
+  team {
+    team_id = github_team.java-instrumentation-triagers.id
+    permission = "triage"
+  }
+
+  user {
+    username = "opentelemetrybot"
+    permission = "push"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-java-instrumentation-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-java-instrumentation.node_id

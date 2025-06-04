@@ -6,6 +6,45 @@ module "repo-opentelemetry-erlang-contrib" {
   has_discussions = true
 }
 
+resource "github_repository_collaborators" "opentelemetry-erlang-contrib" {
+  repository = "opentelemetry-erlang-contrib"
+
+  team {
+    team_id = github_team.erlang-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.erlang-contrib-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.erlang-contrib-maintainers.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.erlang-maintainers.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  user {
+    username = "tsloughter"
+    permission = "admin"
+  }
+
+  user {
+    username = "bryannaegele"
+    permission = "admin"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-erlang-contrib-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-erlang-contrib.node_id

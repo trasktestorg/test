@@ -7,6 +7,270 @@ module "repo-admin" {
   visibility = "private"
 }
 
+resource "github_repository_collaborators" "admin" {
+  repository = "admin"
+
+  team {
+    team_id = github_team.admins.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.android-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.arrow-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.assign-reviewers-action-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.collector-contrib-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.collector-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.configuration-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.cpp-contrib-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.cpp-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.demo-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.docs-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.dotnet-contrib-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.dotnet-instrumentation-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.dotnet-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.ebpf-instrumentation-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.ebpf-profiler-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.erlang-contrib-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.erlang-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.go-compile-instrumentation-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.go-instrumentation-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.go-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.helm-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.injector-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.java-contrib-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.java-instrumentation-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.java-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.javascript-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.lambda-extension-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.network-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.opamp-go-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.opamp-spec-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.opentelemetry-python-contrib-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.operator-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.php-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.project-infra.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.proto-go-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.python-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.ruby-contrib-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.ruby-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.rust-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.sandbox-web-js-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.sig-contributor-experience-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.sig-end-user-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.sig-mainframe-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.sig-project-infra-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.sig-security-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.specs-semconv-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.sqlcommenter-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.swift-maintainers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.technical-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.weaver-maintainers.id
+    permission = "push"
+  }
+}
+
 module "branch-protection-rule-admin-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-admin.node_id

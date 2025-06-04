@@ -8,6 +8,45 @@ module "repo-opentelemetry-js-contrib" {
   allow_auto_merge = true
 }
 
+resource "github_repository_collaborators" "opentelemetry-js-contrib" {
+  repository = "opentelemetry-js-contrib"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.javascript-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.javascript-contrib-triagers.id
+    permission = "triage"
+  }
+
+  team {
+    team_id = github_team.javascript-maintainers.id
+    permission = "admin"
+  }
+
+  team {
+    team_id = github_team.javascript-triagers.id
+    permission = "triage"
+  }
+
+  user {
+    username = "dyladan"
+    permission = "admin"
+  }
+
+  user {
+    username = "pichlermarc"
+    permission = "admin"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-js-contrib-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-js-contrib.node_id

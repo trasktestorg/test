@@ -7,6 +7,20 @@ module "repo-allstar" {
   has_projects = true
 }
 
+resource "github_repository_collaborators" "allstar" {
+  repository = ".allstar"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.sig-security-maintainers.id
+    permission = "maintain"
+  }
+}
+
 module "branch-protection-rule-allstar-0" {
   source = "./modules/branch-protection-fallback"
   repository_id = module.repo-allstar.node_id

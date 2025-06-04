@@ -24,6 +24,25 @@ module "repo-opentelemetry-demo" {
   vulnerability_alerts = false
 }
 
+resource "github_repository_collaborators" "opentelemetry-demo" {
+  repository = "opentelemetry-demo"
+
+  team {
+    team_id = github_team.demo-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.demo-maintainers.id
+    permission = "admin"
+  }
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-demo-0" {
   source = "./modules/branch-protection-feature"
   repository_id = module.repo-opentelemetry-demo.node_id

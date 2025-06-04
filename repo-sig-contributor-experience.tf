@@ -10,6 +10,20 @@ module "repo-sig-contributor-experience" {
   allow_auto_merge = true
 }
 
+resource "github_repository_collaborators" "sig-contributor-experience" {
+  repository = "sig-contributor-experience"
+
+  team {
+    team_id = github_team.sig-contributor-experience-approvers.id
+    permission = "triage"
+  }
+
+  team {
+    team_id = github_team.sig-contributor-experience-maintainers.id
+    permission = "maintain"
+  }
+}
+
 module "branch-protection-rule-sig-contributor-experience-0" {
   source = "./modules/branch-protection-fallback"
   repository_id = module.repo-sig-contributor-experience.node_id

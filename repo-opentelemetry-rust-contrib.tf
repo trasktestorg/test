@@ -11,6 +11,25 @@ module "repo-opentelemetry-rust-contrib" {
   vulnerability_alerts = false
 }
 
+resource "github_repository_collaborators" "opentelemetry-rust-contrib" {
+  repository = "opentelemetry-rust-contrib"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.rust-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.rust-maintainers.id
+    permission = "OpenTelemetryMaintainer"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-rust-contrib-0" {
   source = "./modules/branch-protection-fallback"
   repository_id = module.repo-opentelemetry-rust-contrib.node_id

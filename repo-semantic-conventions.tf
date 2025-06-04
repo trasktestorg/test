@@ -10,6 +10,145 @@ module "repo-semantic-conventions" {
   secret_scanning_status = "enabled"
 }
 
+resource "github_repository_collaborators" "semantic-conventions" {
+  repository = "semantic-conventions"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.profiling-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.semconv-android-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.semconv-browser-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.semconv-cicd-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.semconv-client-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.semconv-code-attribute-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.semconv-container-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.semconv-db-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.semconv-dotnet-approver.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.semconv-feature-flag-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.semconv-genai-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.semconv-http-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.semconv-ios-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.semconv-jvm-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.semconv-k8s-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.semconv-log-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.semconv-messaging-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.semconv-mobile-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.semconv-sdk-health-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.semconv-security-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.semconv-system-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.sig-mainframe-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.specs-semconv-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.specs-semconv-maintainers.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.technical-committee.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.weaver-approvers.id
+    permission = "push"
+  }
+}
+
 module "branch-protection-rule-semantic-conventions-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-semantic-conventions.node_id

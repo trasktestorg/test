@@ -13,6 +13,30 @@ module "repo-opentelemetry-java" {
   pages_source_branch = "benchmarks"
 }
 
+resource "github_repository_collaborators" "opentelemetry-java" {
+  repository = "opentelemetry-java"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.java-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.java-maintainers.id
+    permission = "admin"
+  }
+
+  team {
+    team_id = github_team.java-triagers.id
+    permission = "triage"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-java-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-java.node_id

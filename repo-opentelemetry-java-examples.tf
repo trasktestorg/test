@@ -9,6 +9,55 @@ module "repo-opentelemetry-java-examples" {
   vulnerability_alerts = false
 }
 
+resource "github_repository_collaborators" "opentelemetry-java-examples" {
+  repository = "opentelemetry-java-examples"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.java-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.java-contrib-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.java-contrib-maintainers.id
+    permission = "admin"
+  }
+
+  team {
+    team_id = github_team.java-instrumentation-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.java-instrumentation-maintainers.id
+    permission = "admin"
+  }
+
+  team {
+    team_id = github_team.java-instrumentation-triagers.id
+    permission = "triage"
+  }
+
+  team {
+    team_id = github_team.java-maintainers.id
+    permission = "admin"
+  }
+
+  user {
+    username = "trasktest"
+    permission = "push"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-java-examples-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-java-examples.node_id

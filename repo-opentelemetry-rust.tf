@@ -20,6 +20,25 @@ module "repo-opentelemetry-rust" {
   delete_branch_on_merge = false
 }
 
+resource "github_repository_collaborators" "opentelemetry-rust" {
+  repository = "opentelemetry-rust"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.rust-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.rust-maintainers.id
+    permission = "OpenTelemetryMaintainer"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-rust-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-rust.node_id

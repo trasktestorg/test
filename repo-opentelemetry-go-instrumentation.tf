@@ -19,6 +19,30 @@ module "repo-opentelemetry-go-instrumentation" {
   vulnerability_alerts = false
 }
 
+resource "github_repository_collaborators" "opentelemetry-go-instrumentation" {
+  repository = "opentelemetry-go-instrumentation"
+
+  team {
+    team_id = github_team.go-instrumentation-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.go-instrumentation-maintainers.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.go-instrumentation-triagers.id
+    permission = "triage"
+  }
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-go-instrumentation-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-go-instrumentation.node_id

@@ -11,6 +11,20 @@ module "repo-community" {
   allow_auto_merge = true
 }
 
+resource "github_repository_collaborators" "community" {
+  repository = "community"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "admin"
+  }
+
+  team {
+    team_id = github_team.technical-committee.id
+    permission = "push"
+  }
+}
+
 module "branch-protection-rule-community-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-community.node_id

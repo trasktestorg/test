@@ -16,6 +16,30 @@ module "repo-opentelemetry-go" {
   allow_update_branch = true
 }
 
+resource "github_repository_collaborators" "opentelemetry-go" {
+  repository = "opentelemetry-go"
+
+  team {
+    team_id = github_team.go-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.go-maintainers.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.go-triagers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-go-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-go.node_id

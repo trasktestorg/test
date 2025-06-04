@@ -13,6 +13,30 @@ module "repo-opentelemetry-sandbox-web-js" {
   vulnerability_alerts = false
 }
 
+resource "github_repository_collaborators" "opentelemetry-sandbox-web-js" {
+  repository = "opentelemetry-sandbox-web-js"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.sandbox-web-js-maintainers.id
+    permission = "maintain"
+  }
+
+  user {
+    username = "martinkuba"
+    permission = "admin"
+  }
+
+  user {
+    username = "MSNev"
+    permission = "admin"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-sandbox-web-js-0" {
   source = "./modules/branch-protection-fallback"
   repository_id = module.repo-opentelemetry-sandbox-web-js.node_id

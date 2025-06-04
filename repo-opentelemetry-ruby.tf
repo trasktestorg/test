@@ -18,6 +18,25 @@ module "repo-opentelemetry-ruby" {
   has_pages = true
 }
 
+resource "github_repository_collaborators" "opentelemetry-ruby" {
+  repository = "opentelemetry-ruby"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.ruby-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.ruby-maintainers.id
+    permission = "admin"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-ruby-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-ruby.node_id

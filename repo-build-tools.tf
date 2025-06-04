@@ -12,6 +12,30 @@ module "repo-build-tools" {
   allow_auto_merge = true
 }
 
+resource "github_repository_collaborators" "build-tools" {
+  repository = "build-tools"
+
+  team {
+    team_id = github_team.build-tools-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.spec-sponsors.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.technical-committee.id
+    permission = "admin"
+  }
+}
+
 module "branch-protection-rule-build-tools-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-build-tools.node_id

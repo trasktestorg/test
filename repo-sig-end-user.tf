@@ -5,6 +5,30 @@ module "repo-sig-end-user" {
   has_projects = true
 }
 
+resource "github_repository_collaborators" "sig-end-user" {
+  repository = "sig-end-user"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.sig-end-user-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.sig-end-user-maintainers.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.sig-end-user-triagers.id
+    permission = "triage"
+  }
+}
+
 module "branch-protection-rule-sig-end-user-0" {
   source = "./modules/branch-protection-fallback"
   repository_id = module.repo-sig-end-user.node_id

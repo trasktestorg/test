@@ -9,6 +9,25 @@ module "repo-sig-security" {
   secret_scanning_push_protection_status = "enabled"
 }
 
+resource "github_repository_collaborators" "sig-security" {
+  repository = "sig-security"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.sig-security-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.sig-security-maintainers.id
+    permission = "admin"
+  }
+}
+
 module "branch-protection-rule-sig-security-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-sig-security.node_id

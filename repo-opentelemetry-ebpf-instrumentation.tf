@@ -6,6 +6,20 @@ module "repo-opentelemetry-ebpf-instrumentation" {
   has_projects = true
 }
 
+resource "github_repository_collaborators" "opentelemetry-ebpf-instrumentation" {
+  repository = "opentelemetry-ebpf-instrumentation"
+
+  team {
+    team_id = github_team.ebpf-instrumentation-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.ebpf-instrumentation-maintainers.id
+    permission = "maintain"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-ebpf-instrumentation-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-ebpf-instrumentation.node_id

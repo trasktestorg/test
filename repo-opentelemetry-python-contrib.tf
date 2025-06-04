@@ -8,6 +8,25 @@ module "repo-opentelemetry-python-contrib" {
   allow_auto_merge = true
 }
 
+resource "github_repository_collaborators" "opentelemetry-python-contrib" {
+  repository = "opentelemetry-python-contrib"
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.opentelemetry-python-contrib-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.opentelemetry-python-contrib-maintainers.id
+    permission = "admin"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-python-contrib-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-python-contrib.node_id

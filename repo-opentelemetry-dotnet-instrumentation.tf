@@ -8,6 +8,30 @@ module "repo-opentelemetry-dotnet-instrumentation" {
   allow_auto_merge = true
 }
 
+resource "github_repository_collaborators" "opentelemetry-dotnet-instrumentation" {
+  repository = "opentelemetry-dotnet-instrumentation"
+
+  team {
+    team_id = github_team.dotnet-instrumentation-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.dotnet-instrumentation-maintainers.id
+    permission = "admin"
+  }
+
+  team {
+    team_id = github_team.dotnet-instrumentation-triagers.id
+    permission = "triage"
+  }
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-dotnet-instrumentation-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-dotnet-instrumentation.node_id

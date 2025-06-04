@@ -13,6 +13,35 @@ module "repo-opentelemetry-dotnet-contrib" {
   secret_scanning_status = "enabled"
 }
 
+resource "github_repository_collaborators" "opentelemetry-dotnet-contrib" {
+  repository = "opentelemetry-dotnet-contrib"
+
+  team {
+    team_id = github_team.dotnet-contrib-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.dotnet-contrib-maintainers.id
+    permission = "admin"
+  }
+
+  team {
+    team_id = github_team.dotnet-contrib-triagers.id
+    permission = "triage"
+  }
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  user {
+    username = "opentelemetrybot"
+    permission = "push"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-dotnet-contrib-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-dotnet-contrib.node_id

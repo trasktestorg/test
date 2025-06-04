@@ -6,6 +6,20 @@ module "repo-sig-project-infra" {
   has_projects = true
 }
 
+resource "github_repository_collaborators" "sig-project-infra" {
+  repository = "sig-project-infra"
+
+  team {
+    team_id = github_team.sig-project-infra-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.sig-project-infra-maintainers.id
+    permission = "maintain"
+  }
+}
+
 module "branch-protection-rule-sig-project-infra-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-sig-project-infra.node_id

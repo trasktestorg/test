@@ -12,6 +12,40 @@ module "repo-opentelemetry-collector-releases" {
   vulnerability_alerts = false
 }
 
+resource "github_repository_collaborators" "opentelemetry-collector-releases" {
+  repository = "opentelemetry-collector-releases"
+
+  team {
+    team_id = github_team.collector-contrib-maintainers.id
+    permission = "maintain"
+  }
+
+  team {
+    team_id = github_team.collector-contrib-triagers.id
+    permission = "triage"
+  }
+
+  team {
+    team_id = github_team.collector-releases-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.governance-committee.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.helm-approvers.id
+    permission = "push"
+  }
+
+  team {
+    team_id = github_team.operator-approvers.id
+    permission = "push"
+  }
+}
+
 module "branch-protection-rule-opentelemetry-collector-releases-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-collector-releases.node_id
