@@ -5,7 +5,7 @@ module "opentelemetry-dotnet-contrib-repo" {
   topics = [
     "dotnet",
     "dotnet-core",
-    "opentelemetry"
+    "opentelemetry",
   ]
   has_discussions = true
   squash_merge_commit_title = "PR_TITLE"
@@ -18,7 +18,7 @@ module "opentelemetry-dotnet-contrib-branch-protection-rule-0" {
   repository_id = module.opentelemetry-dotnet-contrib-repo.node_id
   pattern = "main*"
   additional_required_status_checks = [
-    "build-test"
+    "build-test",
   ]
   block_creations = true
   enforce_admins = false
@@ -29,7 +29,7 @@ module "opentelemetry-dotnet-contrib-branch-protection-rule-1" {
   repository_id = module.opentelemetry-dotnet-contrib-repo.node_id
   pattern = "instrumentation*"
   additional_required_status_checks = [
-    "build-test"
+    "build-test",
   ]
   block_creations = true
   push_allowances = ["open-telemetry/dotnet-contrib-approvers"]
@@ -43,7 +43,7 @@ module "opentelemetry-dotnet-contrib-branch-protection-rule-2" {
   repository_id = module.opentelemetry-dotnet-contrib-repo.node_id
   pattern = "exporter*"
   additional_required_status_checks = [
-    "build-test"
+    "build-test",
   ]
   block_creations = true
   push_allowances = ["open-telemetry/dotnet-contrib-approvers"]
@@ -57,7 +57,7 @@ module "opentelemetry-dotnet-contrib-branch-protection-rule-3" {
   repository_id = module.opentelemetry-dotnet-contrib-repo.node_id
   pattern = "extensions*"
   additional_required_status_checks = [
-    "build-test"
+    "build-test",
   ]
   block_creations = true
   push_allowances = ["open-telemetry/dotnet-contrib-approvers"]

@@ -7,7 +7,7 @@ module "opentelemetry-js-repo" {
     "distributed-tracing",
     "metrics",
     "monitoring",
-    "telemetry"
+    "telemetry",
   ]
   has_projects = true
   has_discussions = true
@@ -26,7 +26,7 @@ module "opentelemetry-js-branch-protection-rule-0" {
     "node-tests (20)",
     "node-tests (22)",
     "node-windows-tests",
-    "webworker-tests"
+    "webworker-tests",
   ]
   restrict_pushes = false
 }

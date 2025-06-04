@@ -3,7 +3,7 @@ module "opentelemetry-proto-java-repo" {
   name   = "opentelemetry-proto-java"
   description = "Java Bindings for the OpenTelemetry Protocol (OTLP)"
   topics = [
-    "opentelemetry"
+    "opentelemetry",
   ]
   has_projects = true
   squash_merge_commit_title = "PR_TITLE"
@@ -20,7 +20,7 @@ module "opentelemetry-proto-java-branch-protection-rule-0" {
   additional_required_status_checks = [
     "Build",
     "CodeQL",
-    "gradle-wrapper-validation"
+    "gradle-wrapper-validation",
   ]
   block_creations = true
 }

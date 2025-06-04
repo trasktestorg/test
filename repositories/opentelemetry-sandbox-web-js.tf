@@ -22,7 +22,7 @@ module "opentelemetry-sandbox-web-js-branch-protection-rule-0" {
     "node-tests (18)",
     "node-tests (20)",
     "node-windows-tests (18)",
-    "node-windows-tests (20)"
+    "node-windows-tests (20)",
   ]
   require_conversation_resolution = true
   restrict_pushes = true

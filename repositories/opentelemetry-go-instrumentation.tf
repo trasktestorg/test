@@ -10,7 +10,7 @@ module "opentelemetry-go-instrumentation-repo" {
     "metrics",
     "observability",
     "telemetry",
-    "tracing"
+    "tracing",
   ]
   has_wiki = true
   has_projects = true

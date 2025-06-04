@@ -3,7 +3,7 @@ module "build-tools-repo" {
   name   = "build-tools"
   description = "Building tools provided by OpenTelemetry"
   topics = [
-    "opentelemetry"
+    "opentelemetry",
   ]
   has_wiki = true
   has_projects = true

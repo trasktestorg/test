@@ -5,7 +5,7 @@ module "opentelemetry-network-repo" {
   topics = [
     "ebpf",
     "open-telemetry",
-    "opentelemetry"
+    "opentelemetry",
   ]
   has_wiki = true
   has_projects = true

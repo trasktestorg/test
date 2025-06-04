@@ -7,7 +7,7 @@ module "opentelemetry-operator-repo" {
     "hacktoberfest",
     "kubernetes-operator",
     "opentelemetry",
-    "opentelemetry-collector"
+    "opentelemetry-collector",
   ]
   allow_update_branch = true
   allow_auto_merge = true
@@ -24,7 +24,7 @@ module "opentelemetry-operator-branch-protection-rule-0" {
     "e2e-tests-check",
     "scorecard-tests-check",
     "Security",
-    "Unit tests"
+    "Unit tests",
   ]
   block_creations = true
   allows_deletion = true

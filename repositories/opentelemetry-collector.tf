@@ -8,7 +8,7 @@ module "opentelemetry-collector-repo" {
     "observability",
     "open-telemetry",
     "opentelemetry",
-    "telemetry"
+    "telemetry",
   ]
   has_wiki = true
   has_projects = true
@@ -34,7 +34,7 @@ module "opentelemetry-collector-branch-protection-rule-0" {
     "lint",
     "unittest",
     "windows-unittest (windows-2022)",
-    "windows-unittest (windows-2025)"
+    "windows-unittest (windows-2025)",
   ]
   block_creations = true
 }

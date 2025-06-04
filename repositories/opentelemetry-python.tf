@@ -10,7 +10,7 @@ module "opentelemetry-python-repo" {
     "opentelemetry",
     "python",
     "sdk",
-    "tracecontext"
+    "tracecontext",
   ]
   has_wiki = true
   has_projects = true
@@ -248,7 +248,7 @@ module "opentelemetry-python-branch-protection-rule-0" {
     "public-symbols-check",
     "shellcheck",
     "spellcheck",
-    "tracecontext"
+    "tracecontext",
   ]
   require_conversation_resolution = true
 }
@@ -284,7 +284,7 @@ module "opentelemetry-python-branch-protection-rule-1" {
     "build (pypy3, propagator, ubuntu-latest)",
     "docker-tests",
     "docs",
-    "lint"
+    "lint",
   ]
   depends_on = [module.opentelemetry-python-branch-protection-rule-0]
 }
@@ -295,7 +295,7 @@ module "opentelemetry-python-branch-protection-rule-2" {
   pattern = "release/*"
   require_code_owner_reviews = false
   additional_required_status_checks = [
-    "opentelemetry-api"
+    "opentelemetry-api",
   ]
   enforce_admins = false
   allows_deletion = true

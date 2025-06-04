@@ -15,7 +15,7 @@ module "opentelemetry-demo-repo" {
     "opentelemetry-javascript",
     "opentelemetry-python",
     "opentelemetry-rust",
-    "prometheus"
+    "prometheus",
   ]
   has_projects = true
   has_discussions = true
@@ -41,7 +41,7 @@ module "opentelemetry-demo-branch-protection-rule-1" {
     "markdownlint",
     "misspell",
     "sanity",
-    "yamllint"
+    "yamllint",
   ]
   require_conversation_resolution = true
   block_creations = true

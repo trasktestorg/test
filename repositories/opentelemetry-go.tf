@@ -7,7 +7,7 @@ module "opentelemetry-go-repo" {
     "logging",
     "metrics",
     "opentelemetry",
-    "tracing"
+    "tracing",
   ]
   has_projects = true
   has_discussions = true
@@ -25,7 +25,7 @@ module "opentelemetry-go-branch-protection-rule-0" {
     "lint",
     "test-compatibility",
     "test-coverage",
-    "test-race"
+    "test-race",
   ]
   require_conversation_resolution = true
 }

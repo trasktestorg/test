@@ -5,7 +5,7 @@ module "community-repo" {
   topics = [
     "cncf",
     "community",
-    "opentelemetry"
+    "opentelemetry",
   ]
   has_projects = true
   allow_auto_merge = true
@@ -20,7 +20,7 @@ module "community-branch-protection-rule-0" {
   additional_required_status_checks = [
     "spelling-check",
     "table-check",
-    "toc-check"
+    "toc-check",
   ]
   require_conversation_resolution = true
   block_creations = true

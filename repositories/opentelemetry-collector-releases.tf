@@ -4,7 +4,7 @@ module "opentelemetry-collector-releases-repo" {
   description = "OpenTelemetry Collector Official Releases"
   topics = [
     "open-telemetry",
-    "opentelemetry"
+    "opentelemetry",
   ]
   has_wiki = true
   has_projects = true
@@ -17,7 +17,7 @@ module "opentelemetry-collector-releases-branch-protection-rule-0" {
   repository_id = module.opentelemetry-collector-releases-repo.node_id
   pattern = "main"
   additional_required_status_checks = [
-    "Build"
+    "Build",
   ]
   require_conversation_resolution = true
   block_creations = true

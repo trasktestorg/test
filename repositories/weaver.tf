@@ -9,7 +9,7 @@ module "weaver-repo" {
     "observability",
     "opentelemetry",
     "policy",
-    "semconv"
+    "semconv",
   ]
   has_wiki = true
   has_projects = true
@@ -30,7 +30,7 @@ module "weaver-branch-protection-rule-0" {
     "Rustfmt",
     "Spell Check with Typos",
     "Test (ubuntu-latest, stable)",
-    "Validate workspace"
+    "Validate workspace",
   ]
   block_creations = true
 }

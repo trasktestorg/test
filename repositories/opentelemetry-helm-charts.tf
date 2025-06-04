@@ -16,7 +16,7 @@ module "opentelemetry-helm-charts-branch-protection-rule-0" {
   pattern = "main"
   required_status_checks_strict = false
   additional_required_status_checks = [
-    "lint-test"
+    "lint-test",
   ]
   required_linear_history = true
 }

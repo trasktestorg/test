@@ -4,7 +4,7 @@ module "opentelemetry-proto-go-repo" {
   description = "Generated code for OpenTelemetry protobuf data model"
   topics = [
     "otel",
-    "protobuf"
+    "protobuf",
   ]
   has_wiki = true
   has_projects = true
@@ -17,7 +17,7 @@ module "opentelemetry-proto-go-branch-protection-rule-0" {
   pattern = "main"
   additional_required_status_checks = [
     "generate-and-check",
-    "test-compatibility"
+    "test-compatibility",
   ]
 }
 

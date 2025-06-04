@@ -4,7 +4,7 @@ module "opentelemetry-collector-contrib-repo" {
   description = "Contrib repository for the OpenTelemetry Collector"
   topics = [
     "open-telemetry",
-    "opentelemetry"
+    "opentelemetry",
   ]
   has_projects = true
   has_discussions = true
@@ -31,7 +31,7 @@ module "opentelemetry-collector-contrib-branch-protection-rule-0" {
     "lint",
     "scoped-tests",
     "unittest",
-    "windows-unittest"
+    "windows-unittest",
   ]
   block_creations = true
 }

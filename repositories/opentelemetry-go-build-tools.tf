@@ -14,7 +14,7 @@ module "opentelemetry-go-build-tools-branch-protection-rule-0" {
   pattern = "main"
   additional_required_status_checks = [
     "check-lint",
-    "check-test-race"
+    "check-test-race",
   ]
   required_linear_history = true
 }

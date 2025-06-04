@@ -14,7 +14,7 @@ module "opentelemetry-dotnet-repo" {
     "netcore",
     "opentelemetry",
     "otlp",
-    "telemetry"
+    "telemetry",
   ]
   has_discussions = true
   squash_merge_commit_title = "PR_TITLE"
@@ -27,7 +27,7 @@ module "opentelemetry-dotnet-branch-protection-rule-0" {
   repository_id = module.opentelemetry-dotnet-repo.node_id
   pattern = "main*"
   additional_required_status_checks = [
-    "build-test"
+    "build-test",
   ]
   block_creations = true
   enforce_admins = false

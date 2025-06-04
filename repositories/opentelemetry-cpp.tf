@@ -9,7 +9,7 @@ module "opentelemetry-cpp-repo" {
     "metrics",
     "opentelemetry",
     "sdk",
-    "telemetry"
+    "telemetry",
   ]
   has_projects = true
   has_discussions = true
@@ -29,7 +29,7 @@ module "opentelemetry-cpp-branch-protection-rule-0" {
     "DocFX check",
     "Format",
     "markdown-lint",
-    "misspell"
+    "misspell",
   ]
   required_linear_history = true
 }

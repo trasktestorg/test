@@ -15,7 +15,7 @@ module "sig-security-branch-protection-rule-0" {
   pattern = "main"
   additional_required_status_checks = [
     "markdownlint",
-    "sanity"
+    "sanity",
   ]
   require_conversation_resolution = true
   required_linear_history = true

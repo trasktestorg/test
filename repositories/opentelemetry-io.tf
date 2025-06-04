@@ -4,7 +4,7 @@ module "opentelemetry-io-repo" {
   description = "The OpenTelemetry website and documentation"
   topics = [
     "documentation",
-    "opentelemetry"
+    "opentelemetry",
   ]
   has_projects = true
   has_discussions = true
@@ -29,7 +29,7 @@ module "opentelemetry-io-branch-protection-rule-0" {
     "MARKDOWN linter",
     "REFCACHE updates?",
     "SPELLING check",
-    "WARNINGS in build log?"
+    "WARNINGS in build log?",
   ]
   required_linear_history = true
   block_creations = true

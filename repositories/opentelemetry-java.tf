@@ -3,7 +3,7 @@ module "opentelemetry-java-repo" {
   name   = "opentelemetry-java"
   description = "OpenTelemetry Java SDK"
   topics = [
-    "opentelemetry"
+    "opentelemetry",
   ]
   has_projects = true
   has_discussions = true

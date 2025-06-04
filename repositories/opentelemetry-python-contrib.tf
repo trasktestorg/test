@@ -411,7 +411,7 @@ module "opentelemetry-python-contrib-branch-protection-rule-0" {
     "util-http 3.10 Ubuntu",
     "util-http 3.11 Ubuntu",
     "util-http 3.12 Ubuntu",
-    "util-http 3.9 Ubuntu"
+    "util-http 3.9 Ubuntu",
   ]
   require_conversation_resolution = true
 }

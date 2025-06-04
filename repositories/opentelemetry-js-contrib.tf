@@ -14,7 +14,7 @@ module "opentelemetry-js-contrib-branch-protection-rule-0" {
   pattern = "main"
   additional_required_status_checks = [
     "unit-test (18)",
-    "unit-test (18.19.0)"
+    "unit-test (18.19.0)",
   ]
   restrict_pushes = false
 }

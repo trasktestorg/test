@@ -10,7 +10,7 @@ module "opentelemetry-php-repo" {
     "opentelemetry",
     "opentelemetry-php",
     "php",
-    "tracing"
+    "tracing",
   ]
   has_wiki = true
   has_projects = true

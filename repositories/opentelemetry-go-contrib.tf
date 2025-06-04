@@ -18,7 +18,7 @@ module "opentelemetry-go-contrib-branch-protection-rule-0" {
     "lint",
     "test-compatibility",
     "test-coverage",
-    "test-race"
+    "test-race",
   ]
 }
 
@@ -31,7 +31,7 @@ module "opentelemetry-go-contrib-branch-protection-rule-1" {
   additional_required_status_checks = [
     "lint",
     "test-coverage",
-    "test-race"
+    "test-race",
   ]
   block_creations = true
   depends_on = [module.opentelemetry-go-contrib-branch-protection-rule-0]

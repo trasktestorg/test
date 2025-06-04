@@ -3,7 +3,7 @@ module "opentelemetry-specification-repo" {
   name   = "opentelemetry-specification"
   description = "Specifications for OpenTelemetry"
   topics = [
-    "opentelemetry"
+    "opentelemetry",
   ]
   has_projects = true
   has_discussions = true
@@ -22,7 +22,7 @@ module "opentelemetry-specification-branch-protection-rule-0" {
   additional_required_status_checks = [
     "markdownlint",
     "misspell",
-    "yamllint"
+    "yamllint",
   ]
   require_conversation_resolution = true
 }

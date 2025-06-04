@@ -20,7 +20,7 @@ module "opentelemetry-java-instrumentation-branch-protection-rule-0" {
   additional_required_status_checks = [
     "CodeQL",
     "gradle-wrapper-validation",
-    "required-status-check"
+    "required-status-check",
   ]
 }
 
@@ -32,7 +32,7 @@ module "opentelemetry-java-instrumentation-branch-protection-rule-1" {
   additional_required_status_checks = [
     "CodeQL",
     "gradle-wrapper-validation",
-    "required-status-check"
+    "required-status-check",
   ]
   depends_on = [module.opentelemetry-java-instrumentation-branch-protection-rule-0]
 }

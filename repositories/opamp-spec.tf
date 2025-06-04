@@ -17,7 +17,7 @@ module "opamp-spec-branch-protection-rule-0" {
   pattern = "main"
   required_status_checks_strict = false
   additional_required_status_checks = [
-    "markdown-toc-check"
+    "markdown-toc-check",
   ]
   required_linear_history = true
   block_creations = true

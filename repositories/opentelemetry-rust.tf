@@ -9,7 +9,7 @@ module "opentelemetry-rust-repo" {
     "opentelemetry",
     "prometheus",
     "tracing",
-    "zipkin"
+    "zipkin",
   ]
   has_projects = true
   has_discussions = true
@@ -29,7 +29,7 @@ module "opentelemetry-rust-branch-protection-rule-0" {
     "docs",
     "lint",
     "test (stable, windows-latest)",
-    "test (ubuntu-latest, stable)"
+    "test (ubuntu-latest, stable)",
   ]
 }
 

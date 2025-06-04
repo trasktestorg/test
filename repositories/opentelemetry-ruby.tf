@@ -10,7 +10,7 @@ module "opentelemetry-ruby-repo" {
     "opentelemetry",
     "opentelemetry-api",
     "opentelemetry-ruby",
-    "telemetry"
+    "telemetry",
   ]
   has_projects = true
   has_discussions = true

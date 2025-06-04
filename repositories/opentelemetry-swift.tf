@@ -17,7 +17,7 @@ module "opentelemetry-swift-branch-protection-rule-0" {
   require_code_owner_reviews = false
   additional_required_status_checks = [
     "iOS",
-    "macOS"
+    "macOS",
   ]
 }
 

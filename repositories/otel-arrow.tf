@@ -27,7 +27,7 @@ module "otel-arrow-branch-protection-rule-0" {
     "sanity",
     "structure_check (otap-dataflow)",
     "test_and_coverage (otap-dataflow)",
-    "test_and_coverage (pkg/otel)"
+    "test_and_coverage (pkg/otel)",
   ]
   block_creations = true
 }

@@ -12,7 +12,7 @@ module "opentelemetry-configuration-branch-protection-rule-0" {
   repository_id = module.opentelemetry-configuration-repo.node_id
   pattern = "main"
   additional_required_status_checks = [
-    "check-schema"
+    "check-schema",
   ]
   block_creations = true
 }

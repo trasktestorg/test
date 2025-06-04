@@ -9,7 +9,7 @@ module "opentelemetry-ruby-contrib-repo" {
     "opentelemetry-instrumentation",
     "ruby",
     "telemetry",
-    "tracing"
+    "tracing",
   ]
   has_projects = true
   has_discussions = true
@@ -26,7 +26,7 @@ module "opentelemetry-ruby-contrib-branch-protection-rule-0" {
   pattern = "main"
   additional_required_status_checks = [
     "all / ubuntu-latest",
-    "Conventional Commits Validation"
+    "Conventional Commits Validation",
   ]
   force_push_bypassers = ["/arielvalentin"]
 }

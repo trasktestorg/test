@@ -27,7 +27,7 @@ module "semantic-conventions-branch-protection-rule-0" {
     "schemas-check",
     "semantic-conventions",
     "semantic-conventions-registry",
-    "yamllint"
+    "yamllint",
   ]
   require_conversation_resolution = true
   block_creations = true

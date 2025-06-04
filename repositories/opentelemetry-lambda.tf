@@ -4,7 +4,7 @@ module "opentelemetry-lambda-repo" {
   description = "Create your own Lambda Layer in each OTel language using this starter code. Add the Lambda Layer to your Lambda Function to get tracing with OpenTelemetry."
   topics = [
     "aws-lambda",
-    "opentelemetry"
+    "opentelemetry",
   ]
   has_projects = true
   has_discussions = true

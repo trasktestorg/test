@@ -5,7 +5,7 @@ module "opentelemetry-ebpf-profiler-repo" {
   homepage_url = ""
   topics = [
     "ebpf",
-    "profiler"
+    "profiler",
   ]
   has_wiki = true
   has_projects = true

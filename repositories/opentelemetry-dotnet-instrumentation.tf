@@ -18,7 +18,7 @@ module "opentelemetry-dotnet-instrumentation-branch-protection-rule-0" {
     "check-native-format (windows-2022)",
     "check-native-headers",
     "check-sdk-versions",
-    "test-jobs"
+    "test-jobs",
   ]
   required_linear_history = true
   enforce_admins = false

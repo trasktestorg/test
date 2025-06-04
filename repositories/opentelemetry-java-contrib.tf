@@ -15,7 +15,7 @@ module "opentelemetry-java-contrib-branch-protection-rule-0" {
   required_status_checks_strict = false
   additional_required_status_checks = [
     "gradle-wrapper-validation",
-    "required-status-check"
+    "required-status-check",
   ]
 }
 
@@ -26,7 +26,7 @@ module "opentelemetry-java-contrib-branch-protection-rule-1" {
   additional_required_status_checks = [
     "CodeQL",
     "gradle-wrapper-validation",
-    "required-status-check"
+    "required-status-check",
   ]
   depends_on = [module.opentelemetry-java-contrib-branch-protection-rule-0]
 }

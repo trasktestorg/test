@@ -21,7 +21,7 @@ module "admin-branch-protection-rule-0" {
   required_status_checks = false
   required_status_checks_no_easy_cla = true
   additional_required_status_checks = [
-    "terraform"
+    "terraform",
   ]
 }
 
