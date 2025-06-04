@@ -14,7 +14,8 @@ module "admin-branch-protection-rule-0" {
   # this is temporary to quickly keep the state file in sync with source control
   # while we are rolling this out initially, since otherwise its easy to accidentally
   # blow things away when they aren't in sync
-  enforce_admins = false
+  required_approving_review_count = 0
+  require_code_owner_reviews = false
   # EasyCLA is not running in merge queue on private repo
   # submitted EasyCLA ticket: https://jira.linuxfoundation.org/plugins/servlet/desk/portal/4/SUPPORT-35724
   required_status_checks = false
