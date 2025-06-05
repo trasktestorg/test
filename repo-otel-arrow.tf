@@ -8,6 +8,7 @@ module "repo-otel-arrow" {
   merge_commit_title = "PR_TITLE"
   merge_commit_message = "PR_BODY"
   allow_update_branch = true
+  allow_auto_merge = true
   secret_scanning_status = "enabled"
   secret_scanning_push_protection_status = "enabled"
 }
@@ -40,6 +41,7 @@ module "branch-protection-rule-otel-arrow-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-otel-arrow.node_id
   pattern = "main"
+  required_status_checks_strict = false
   additional_required_status_checks = [
     "bench (otap-dataflow)",
     "clippy (otap-dataflow)",
@@ -53,7 +55,6 @@ module "branch-protection-rule-otel-arrow-0" {
     "test_and_coverage (otap-dataflow)",
     "test_and_coverage (pkg/otel)",
   ]
-  block_creations = true
 }
 
 module "branch-protection-rule-otel-arrow-1" {
@@ -67,10 +68,6 @@ module "branch-protection-rule-otel-arrow-2" {
   source = "./modules/branch-protection-fallback"
   repository_id = module.repo-otel-arrow.node_id
   pattern = "**/**"
-  required_pull_request_reviews = true
-  require_code_owner_reviews = false
-  restrict_pushes = true
-  block_creations = true
   allows_deletion = true
   depends_on = [module.branch-protection-rule-otel-arrow-1]
 }
