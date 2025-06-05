@@ -278,11 +278,6 @@ module "branch-protection-rule-admin-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-admin.node_id
   pattern = "main"
-  # this is temporary to quickly keep the state file in sync with source control
-  # while we are rolling this out initially, since otherwise its easy to accidentally
-  # blow things away when they aren't in sync
-  required_approving_review_count = 0
-  require_code_owner_reviews = false
   # EasyCLA isn't supported on private repos
   # (https://jira.linuxfoundation.org/plugins/servlet/desk/portal/4/SUPPORT-35724)
   required_status_checks = false
