@@ -30,6 +30,7 @@ variable "pages_source_branch" { default = "gh-pages" }
 variable "pages_build_type" { default = "legacy" }
 variable "pages_path" { default = "/" }
 
+variable "archived" { default = false }
 variable "visibility" { default = "public" }
 
 resource "github_repository" "this" {
@@ -60,7 +61,7 @@ resource "github_repository" "this" {
   allow_auto_merge       = var.allow_auto_merge
   delete_branch_on_merge = var.delete_branch_on_merge
 
-  vulnerability_alerts = var.vulnerability_alerts
+  vulnerability_alerts = var.vulnerability_alerts && !var.archived
 
   security_and_analysis {
     secret_scanning {
@@ -82,6 +83,7 @@ resource "github_repository" "this" {
     }
   }
 
+  archived = var.archived
   visibility = var.visibility
 
   # deprecated

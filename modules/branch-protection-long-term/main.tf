@@ -3,6 +3,7 @@ variable "pattern" {}
 
 variable required_pull_request_reviews { default = true }
 variable "required_approving_review_count" { default = 1 }
+variable "dismiss_stale_reviews" { default = false }
 variable "require_code_owner_reviews" { default = true }
 variable "restrict_dismissals" { default = false }
 variable "pull_request_bypassers" { default = [] }
@@ -35,7 +36,7 @@ resource "github_branch_protection" "this" {
     for_each = var.required_pull_request_reviews ? [1] : []
     content {
       required_approving_review_count = var.required_approving_review_count
-      dismiss_stale_reviews           = false
+      dismiss_stale_reviews           = var.dismiss_stale_reviews
       require_code_owner_reviews      = var.require_code_owner_reviews
       restrict_dismissals             = var.restrict_dismissals
       dismissal_restrictions          = []
