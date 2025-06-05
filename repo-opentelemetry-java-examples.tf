@@ -47,11 +47,6 @@ resource "github_repository_collaborators" "opentelemetry-java-examples" {
     permission = "admin"
   }
 
-  user {
-    username = "trasktest"
-    permission = "push"
-  }
-
   # this is really an org-level role, but it needs to be specified here
   # to avoid false positives showing up in the plan
   # (see underlying bug at https://github.com/integrations/terraform-provider-github/issues/2445)
