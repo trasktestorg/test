@@ -14,14 +14,6 @@ module "repo-opentelemetry-rust-contrib" {
 resource "github_repository_collaborators" "opentelemetry-rust-contrib" {
   repository = "opentelemetry-rust-contrib"
 
-  # this is really an org-level role, but it needs to be specified here
-  # to avoid false positives showing up in the plan
-  # (see underlying bug at https://github.com/integrations/terraform-provider-github/issues/2445)
-  team {
-    team_id = github_team.governance-committee.id
-    permission = "push"
-  }
-
   team {
     team_id = github_team.rust-approvers.id
     permission = "push"

@@ -19,14 +19,6 @@ resource "github_repository_collaborators" "opentelemetry-proto-go" {
     permission = "admin"
   }
 
-  # this is really an org-level role, but it needs to be specified here
-  # to avoid false positives showing up in the plan
-  # (see underlying bug at https://github.com/integrations/terraform-provider-github/issues/2445)
-  team {
-    team_id = github_team.governance-committee.id
-    permission = "push"
-  }
-
   team {
     team_id = github_team.proto-go-approvers.id
     permission = "push"
