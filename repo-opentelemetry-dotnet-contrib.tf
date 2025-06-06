@@ -60,7 +60,6 @@ module "branch-protection-rule-opentelemetry-dotnet-contrib-0" {
   additional_required_status_checks = [
     "build-test",
   ]
-  block_creations = true
   enforce_admins = false
 }
 
@@ -71,7 +70,6 @@ module "branch-protection-rule-opentelemetry-dotnet-contrib-1" {
   additional_required_status_checks = [
     "build-test",
   ]
-  block_creations = true
   push_allowances = ["open-telemetry/dotnet-contrib-approvers"]
   enforce_admins = false
   allows_deletion = true
@@ -85,7 +83,6 @@ module "branch-protection-rule-opentelemetry-dotnet-contrib-2" {
   additional_required_status_checks = [
     "build-test",
   ]
-  block_creations = true
   push_allowances = ["open-telemetry/dotnet-contrib-approvers"]
   enforce_admins = false
   allows_deletion = true
@@ -99,7 +96,6 @@ module "branch-protection-rule-opentelemetry-dotnet-contrib-3" {
   additional_required_status_checks = [
     "build-test",
   ]
-  block_creations = true
   push_allowances = ["open-telemetry/dotnet-contrib-approvers"]
   enforce_admins = false
   allows_deletion = true

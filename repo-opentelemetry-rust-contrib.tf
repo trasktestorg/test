@@ -54,7 +54,6 @@ module "branch-protection-rule-opentelemetry-rust-contrib-1" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-rust-contrib.node_id
   pattern = "main"
-  block_creations = true
   depends_on = [module.branch-protection-rule-opentelemetry-rust-contrib-0]
 }
 

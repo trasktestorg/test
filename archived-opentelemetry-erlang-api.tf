@@ -38,6 +38,7 @@ module "branch-protection-rule-opentelemetry-erlang-api-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-erlang-api.node_id
   pattern = "master"
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-erlang-api-1" {

@@ -180,7 +180,6 @@ module "branch-protection-rule-semantic-conventions-0" {
     "yamllint",
   ]
   require_conversation_resolution = true
-  block_creations = true
 }
 
 module "branch-protection-rule-semantic-conventions-1" {
@@ -195,6 +194,7 @@ module "branch-protection-rule-semantic-conventions-1" {
   allows_force_pushes = true
   allows_deletion = true
   depends_on = [module.branch-protection-rule-semantic-conventions-0]
+  block_creations = false
 }
 
 module "branch-protection-rule-semantic-conventions-2" {

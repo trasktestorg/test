@@ -38,6 +38,7 @@ module "branch-protection-rule-opentelemetry-collector-builder-0" {
   pattern = "main"
   require_code_owner_reviews = false
   dismiss_stale_reviews = true
+  block_creations = false
   additional_required_status_checks = ["Unit tests", "Security", "Integration test", "Code standards (linting)"]
 }
 

@@ -453,6 +453,7 @@ module "branch-protection-rule-opentelemetry-python-contrib-1" {
   require_code_owner_reviews = false
   enforce_admins = false
   depends_on = [module.branch-protection-rule-opentelemetry-python-contrib-0]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-python-contrib-2" {
@@ -470,7 +471,6 @@ module "branch-protection-rule-opentelemetry-python-contrib-3" {
   require_code_owner_reviews = false
   required_status_checks = false
   required_status_checks_no_easy_cla = true
-  block_creations = true
   enforce_admins = false
   depends_on = [module.branch-protection-rule-opentelemetry-python-contrib-2]
 }

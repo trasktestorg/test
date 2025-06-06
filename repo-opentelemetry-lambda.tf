@@ -48,7 +48,6 @@ module "branch-protection-rule-opentelemetry-lambda-0" {
   pattern = "main"
   required_status_checks_strict = false
   required_linear_history = true
-  block_creations = true
 }
 
 module "branch-protection-rule-opentelemetry-lambda-1" {

@@ -317,6 +317,7 @@ module "branch-protection-rule-opentelemetry-python-1" {
     "lint",
   ]
   depends_on = [module.branch-protection-rule-opentelemetry-python-0]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-python-2" {
@@ -330,6 +331,7 @@ module "branch-protection-rule-opentelemetry-python-2" {
   enforce_admins = false
   allows_deletion = true
   depends_on = [module.branch-protection-rule-opentelemetry-python-1]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-python-3" {

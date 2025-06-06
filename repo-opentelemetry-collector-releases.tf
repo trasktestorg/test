@@ -65,7 +65,6 @@ module "branch-protection-rule-opentelemetry-collector-releases-0" {
     "Build",
   ]
   require_conversation_resolution = true
-  block_creations = true
 }
 
 module "branch-protection-rule-opentelemetry-collector-releases-1" {
@@ -94,6 +93,7 @@ module "branch-protection-rule-opentelemetry-collector-releases-3" {
   allows_force_pushes = true
   allows_deletion = true
   depends_on = [module.branch-protection-rule-opentelemetry-collector-releases-2]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-collector-releases-4" {
@@ -103,5 +103,6 @@ module "branch-protection-rule-opentelemetry-collector-releases-4" {
   require_conversation_resolution = true
   allows_deletion = true
   depends_on = [module.branch-protection-rule-opentelemetry-collector-releases-3]
+  block_creations = false
 }
 

@@ -34,6 +34,7 @@ module "branch-protection-rule-opentelemetry-log-collection-0" {
   repository_id = module.repo-opentelemetry-log-collection.node_id
   pattern = "main"
   required_status_checks_strict = false
+  block_creations = false
   additional_required_status_checks = ["lint"]
 }
 

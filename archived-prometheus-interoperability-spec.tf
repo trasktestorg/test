@@ -39,6 +39,7 @@ module "branch-protection-rule-prometheus-interoperability-spec-0" {
   require_code_owner_reviews = false
   required_status_checks = false
   enforce_admins = false
+  block_creations = false
 }
 
 module "branch-protection-rule-prometheus-interoperability-spec-1" {

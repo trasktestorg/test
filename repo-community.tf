@@ -45,7 +45,6 @@ module "branch-protection-rule-community-0" {
     "toc-check",
   ]
   require_conversation_resolution = true
-  block_creations = true
 }
 
 module "branch-protection-rule-community-1" {
@@ -67,6 +66,7 @@ module "branch-protection-rule-community-2" {
   allows_force_pushes = true
   allows_deletion = true
   depends_on = [module.branch-protection-rule-community-1]
+  block_creations = false
 }
 
 module "branch-protection-rule-community-3" {

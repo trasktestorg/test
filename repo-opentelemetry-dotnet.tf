@@ -69,7 +69,6 @@ module "branch-protection-rule-opentelemetry-dotnet-0" {
   additional_required_status_checks = [
     "build-test",
   ]
-  block_creations = true
   enforce_admins = false
 }
 

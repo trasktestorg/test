@@ -41,7 +41,6 @@ module "branch-protection-rule-sig-security-0" {
   ]
   require_conversation_resolution = true
   required_linear_history = true
-  block_creations = true
 }
 
 module "branch-protection-rule-sig-security-1" {
@@ -57,6 +56,7 @@ module "branch-protection-rule-sig-security-1" {
   enforce_admins = false
   allows_force_pushes = true
   depends_on = [module.branch-protection-rule-sig-security-0]
+  block_creations = false
 }
 
 module "branch-protection-rule-sig-security-2" {

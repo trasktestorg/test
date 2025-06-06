@@ -36,6 +36,5 @@ module "branch-protection-rule-gh-manager-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-gh-manager.node_id
   pattern = "main"
-  block_creations = true
 }
 

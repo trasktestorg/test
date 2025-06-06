@@ -229,7 +229,6 @@ module "branch-protection-rule-opentelemetry-io-0" {
     "WARNINGS in build log?",
   ]
   required_linear_history = true
-  block_creations = true
   enforce_admins = false
 }
 

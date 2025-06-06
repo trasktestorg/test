@@ -36,7 +36,6 @@ module "branch-protection-rule-assign-reviewers-action-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-assign-reviewers-action.node_id
   pattern = "main"
-  block_creations = true
 }
 
 module "branch-protection-rule-assign-reviewers-action-1" {

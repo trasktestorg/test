@@ -50,7 +50,6 @@ module "branch-protection-rule-opamp-spec-0" {
     "markdown-toc-check",
   ]
   required_linear_history = true
-  block_creations = true
 }
 
 module "branch-protection-rule-opamp-spec-1" {

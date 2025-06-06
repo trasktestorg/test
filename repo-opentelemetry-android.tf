@@ -46,7 +46,6 @@ module "branch-protection-rule-opentelemetry-android-0" {
   additional_required_status_checks = [
     "required-status-check",
   ]
-  block_creations = true
 }
 
 module "branch-protection-rule-opentelemetry-android-1" {
@@ -72,6 +71,7 @@ module "branch-protection-rule-opentelemetry-android-3" {
     "required-status-check",
   ]
   depends_on = [module.branch-protection-rule-opentelemetry-android-2]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-android-4" {
@@ -88,7 +88,6 @@ module "branch-protection-rule-opentelemetry-android-5" {
   required_status_checks = false
   required_status_checks_no_easy_cla = true
   required_status_checks_strict = false
-  block_creations = true
   depends_on = [module.branch-protection-rule-opentelemetry-android-4]
 }
 

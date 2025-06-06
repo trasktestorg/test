@@ -41,7 +41,6 @@ module "branch-protection-rule-sig-project-infra-0" {
   repository_id = module.repo-sig-project-infra.node_id
   pattern = "main"
   required_status_checks_strict = false
-  block_creations = true
 }
 
 module "branch-protection-rule-sig-project-infra-1" {

@@ -45,6 +45,5 @@ module "branch-protection-rule-sig-mainframe-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-sig-mainframe.node_id
   pattern = "main"
-  block_creations = true
 }
 

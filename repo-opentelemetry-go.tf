@@ -82,6 +82,7 @@ module "branch-protection-rule-opentelemetry-go-2" {
   restrict_pushes = false
   enforce_admins = false
   depends_on = [module.branch-protection-rule-opentelemetry-go-1]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-go-3" {

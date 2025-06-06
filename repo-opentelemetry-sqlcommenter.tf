@@ -48,7 +48,6 @@ module "branch-protection-rule-opentelemetry-sqlcommenter-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-sqlcommenter.node_id
   pattern = "main"
-  block_creations = true
 }
 
 module "branch-protection-rule-opentelemetry-sqlcommenter-1" {

@@ -44,7 +44,6 @@ module "branch-protection-rule-cpp-build-tools-0" {
   pattern = "main"
   required_status_checks = false
   required_status_checks_no_easy_cla = true
-  block_creations = true
 }
 
 module "branch-protection-rule-cpp-build-tools-1" {

@@ -60,7 +60,6 @@ module "branch-protection-rule-opentelemetry-go-instrumentation-0" {
   pattern = "main"
   restrict_dismissals = true
   require_conversation_resolution = true
-  block_creations = true
 }
 
 module "branch-protection-rule-opentelemetry-go-instrumentation-1" {
@@ -82,6 +81,7 @@ module "branch-protection-rule-opentelemetry-go-instrumentation-2" {
   allows_force_pushes = true
   allows_deletion = true
   depends_on = [module.branch-protection-rule-opentelemetry-go-instrumentation-1]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-go-instrumentation-3" {

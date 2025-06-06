@@ -69,5 +69,6 @@ module "branch-protection-rule-opentelemetry-dotnet-instrumentation-1" {
   restrict_pushes = false
   enforce_admins = false
   depends_on = [module.branch-protection-rule-opentelemetry-dotnet-instrumentation-0]
+  block_creations = false
 }
 

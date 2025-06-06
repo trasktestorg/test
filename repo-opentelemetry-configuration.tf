@@ -44,7 +44,6 @@ module "branch-protection-rule-opentelemetry-configuration-0" {
   additional_required_status_checks = [
     "check-schema",
   ]
-  block_creations = true
 }
 
 module "branch-protection-rule-opentelemetry-configuration-1" {

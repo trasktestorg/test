@@ -37,7 +37,6 @@ module "branch-protection-rule-docs-ja-0" {
   repository_id = module.repo-docs-ja.node_id
   pattern = "main"
   require_code_owner_reviews = false
-  block_creations = true
 }
 
 module "branch-protection-rule-docs-ja-1" {

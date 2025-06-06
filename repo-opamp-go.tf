@@ -50,7 +50,6 @@ module "branch-protection-rule-opamp-go-0" {
     "build-and-test",
   ]
   required_linear_history = true
-  block_creations = true
 }
 
 module "branch-protection-rule-opamp-go-1" {

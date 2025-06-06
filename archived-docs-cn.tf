@@ -39,7 +39,6 @@ module "branch-protection-rule-docs-cn-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-docs-cn.node_id
   pattern = "main"
-  block_creations = true
   enforce_admins = false
 }
 

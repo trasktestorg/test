@@ -62,7 +62,6 @@ module "branch-protection-rule-opentelemetry-go-compile-instrumentation-1" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-go-compile-instrumentation.node_id
   pattern = "main"
-  block_creations = true
   depends_on = [module.branch-protection-rule-opentelemetry-go-compile-instrumentation-0]
 }
 

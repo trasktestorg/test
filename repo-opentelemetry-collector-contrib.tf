@@ -68,7 +68,6 @@ module "branch-protection-rule-opentelemetry-collector-contrib-0" {
     "unittest",
     "windows-unittest",
   ]
-  block_creations = true
 }
 
 module "branch-protection-rule-opentelemetry-collector-contrib-1" {
@@ -81,6 +80,7 @@ module "branch-protection-rule-opentelemetry-collector-contrib-1" {
   restrict_pushes = false
   enforce_admins = false
   depends_on = [module.branch-protection-rule-opentelemetry-collector-contrib-0]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-collector-contrib-2" {

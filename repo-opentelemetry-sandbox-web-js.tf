@@ -71,7 +71,6 @@ module "branch-protection-rule-opentelemetry-sandbox-web-js-1" {
   require_code_owner_reviews = false
   required_status_checks_strict = false
   require_conversation_resolution = true
-  block_creations = true
   depends_on = [module.branch-protection-rule-opentelemetry-sandbox-web-js-0]
 }
 

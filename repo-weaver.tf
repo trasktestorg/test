@@ -67,7 +67,6 @@ module "branch-protection-rule-weaver-0" {
     "Test (ubuntu-latest, stable)",
     "Validate workspace",
   ]
-  block_creations = true
 }
 
 module "branch-protection-rule-weaver-1" {

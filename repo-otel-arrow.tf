@@ -93,5 +93,6 @@ module "branch-protection-rule-otel-arrow-3" {
   restrict_pushes = false
   enforce_admins = false
   depends_on = [module.branch-protection-rule-otel-arrow-2]
+  block_creations = false
 }
 

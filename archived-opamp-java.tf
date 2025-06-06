@@ -39,6 +39,7 @@ module "branch-protection-rule-opamp-java-0" {
   pattern = "**/**"
   required_pull_request_reviews = true
   required_linear_history = true
+  block_creations = false
 }
 
 module "branch-protection-rule-opamp-java-1" {

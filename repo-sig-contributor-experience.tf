@@ -57,7 +57,6 @@ module "branch-protection-rule-sig-contributor-experience-1" {
   pattern = "main"
   required_approving_review_count = 2
   require_conversation_resolution = true
-  block_creations = true
   depends_on = [module.branch-protection-rule-sig-contributor-experience-0]
 }
 

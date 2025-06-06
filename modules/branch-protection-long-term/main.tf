@@ -20,7 +20,7 @@ variable "lock_branch" { default = false }
 variable "enforce_admins" { default = true }
 
 variable "restrict_pushes" { default = true }
-variable "block_creations" { default = false }
+variable "block_creations" { default = true }
 variable "push_allowances" { default = [] }
 
 variable "allows_force_pushes" { default = false }

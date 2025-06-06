@@ -59,6 +59,5 @@ module "branch-protection-rule-opentelemetry-php-instrumentation-0" {
   repository_id = module.repo-opentelemetry-php-instrumentation.node_id
   pattern = "main"
   required_linear_history = true
-  block_creations = true
 }
 

@@ -54,7 +54,6 @@ module "branch-protection-rule-opentelemetry-network-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-network.node_id
   pattern = "main"
-  block_creations = true
 }
 
 module "branch-protection-rule-opentelemetry-network-1" {

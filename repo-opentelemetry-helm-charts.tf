@@ -71,6 +71,7 @@ module "branch-protection-rule-opentelemetry-helm-charts-1" {
   restrict_pushes = false
   enforce_admins = false
   depends_on = [module.branch-protection-rule-opentelemetry-helm-charts-0]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-helm-charts-2" {

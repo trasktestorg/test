@@ -37,7 +37,6 @@ module "branch-protection-rule-oteps-0" {
   required_approving_review_count = 4
   additional_required_status_checks = ["misspell", "markdownlint"]
   require_conversation_resolution = true
-  block_creations = true
 }
 
 module "branch-protection-rule-oteps-1" {

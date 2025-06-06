@@ -76,7 +76,6 @@ module "branch-protection-rule-opentelemetry-operator-0" {
     "Security",
     "Unit tests",
   ]
-  block_creations = true
   allows_deletion = true
 }
 

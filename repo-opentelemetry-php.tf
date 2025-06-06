@@ -84,5 +84,6 @@ module "branch-protection-rule-opentelemetry-php-1" {
   pull_request_bypassers = ["open-telemetry/php-maintainers"]
   required_status_checks = false
   depends_on = [module.branch-protection-rule-opentelemetry-php-0]
+  block_creations = false
 }
 

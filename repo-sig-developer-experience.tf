@@ -44,6 +44,5 @@ module "branch-protection-rule-sig-developer-experience-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-sig-developer-experience.node_id
   pattern = "main"
-  block_creations = true
 }
 

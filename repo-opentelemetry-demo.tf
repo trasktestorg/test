@@ -74,7 +74,6 @@ module "branch-protection-rule-opentelemetry-demo-1" {
     "yamllint",
   ]
   require_conversation_resolution = true
-  block_creations = true
   depends_on = [module.branch-protection-rule-opentelemetry-demo-0]
 }
 

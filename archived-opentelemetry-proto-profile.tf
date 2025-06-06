@@ -39,5 +39,6 @@ module "branch-protection-rule-opentelemetry-proto-profile-0" {
   repository_id = module.repo-opentelemetry-proto-profile.node_id
   pattern = "**/**"
   required_pull_request_reviews = true
+  block_creations = false
 }
 

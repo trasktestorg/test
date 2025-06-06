@@ -80,6 +80,7 @@ module "branch-protection-rule-opentelemetry-js-contrib-1" {
   allows_force_pushes = true
   allows_deletion = true
   depends_on = [module.branch-protection-rule-opentelemetry-js-contrib-0]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-js-contrib-2" {

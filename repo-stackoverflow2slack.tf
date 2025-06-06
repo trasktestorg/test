@@ -40,6 +40,5 @@ module "branch-protection-rule-stackoverflow2slack-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-stackoverflow2slack.node_id
   pattern = "main"
-  block_creations = true
 }
 

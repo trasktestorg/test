@@ -35,7 +35,6 @@ module "branch-protection-rule-github-0" {
   required_status_checks = false
   required_status_checks_no_easy_cla = true
   require_conversation_resolution = true
-  block_creations = true
 }
 
 module "branch-protection-rule-github-1" {

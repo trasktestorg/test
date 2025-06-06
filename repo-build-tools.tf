@@ -52,7 +52,6 @@ module "branch-protection-rule-build-tools-0" {
   repository_id = module.repo-build-tools.node_id
   pattern = "main"
   require_conversation_resolution = true
-  block_creations = true
 }
 
 module "branch-protection-rule-build-tools-1" {
@@ -66,7 +65,6 @@ module "branch-protection-rule-build-tools-2" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-build-tools.node_id
   pattern = "feature/**"
-  block_creations = true
   allows_deletion = true
   depends_on = [module.branch-protection-rule-build-tools-1]
 }

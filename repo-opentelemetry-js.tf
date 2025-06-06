@@ -77,6 +77,7 @@ module "branch-protection-rule-opentelemetry-js-1" {
   enforce_admins = false
   allows_force_pushes = true
   depends_on = [module.branch-protection-rule-opentelemetry-js-0]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-js-2" {

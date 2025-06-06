@@ -68,7 +68,6 @@ module "branch-protection-rule-opentelemetry-go-contrib-1" {
     "test-coverage",
     "test-race",
   ]
-  block_creations = true
   depends_on = [module.branch-protection-rule-opentelemetry-go-contrib-0]
 }
 
@@ -89,6 +88,7 @@ module "branch-protection-rule-opentelemetry-go-contrib-3" {
   restrict_pushes = false
   enforce_admins = false
   depends_on = [module.branch-protection-rule-opentelemetry-go-contrib-2]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-go-contrib-4" {

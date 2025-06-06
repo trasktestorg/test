@@ -64,6 +64,7 @@ module "branch-protection-rule-opentelemetry-java-contrib-1" {
     "required-status-check",
   ]
   depends_on = [module.branch-protection-rule-opentelemetry-java-contrib-0]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-java-contrib-2" {
@@ -76,6 +77,7 @@ module "branch-protection-rule-opentelemetry-java-contrib-2" {
   restrict_pushes = false
   lock_branch = true
   depends_on = [module.branch-protection-rule-opentelemetry-java-contrib-1]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-java-contrib-3" {
@@ -88,6 +90,7 @@ module "branch-protection-rule-opentelemetry-java-contrib-3" {
   restrict_pushes = false
   lock_branch = true
   depends_on = [module.branch-protection-rule-opentelemetry-java-contrib-2]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-java-contrib-4" {

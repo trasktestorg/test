@@ -41,7 +41,6 @@ module "branch-protection-rule-opentelemetry-ebpf-instrumentation-0" {
   repository_id = module.repo-opentelemetry-ebpf-instrumentation.node_id
   pattern = "main"
   required_status_checks_strict = false
-  block_creations = true
 }
 
 module "branch-protection-rule-opentelemetry-ebpf-instrumentation-1" {

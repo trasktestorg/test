@@ -71,6 +71,7 @@ module "branch-protection-rule-semantic-conventions-java-1" {
     "required-status-check",
   ]
   depends_on = [module.branch-protection-rule-semantic-conventions-java-0]
+  block_creations = false
 }
 
 module "branch-protection-rule-semantic-conventions-java-2" {

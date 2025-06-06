@@ -95,6 +95,7 @@ module "branch-protection-rule-opentelemetry-ruby-contrib-2" {
   allows_force_pushes = true
   allows_deletion = true
   depends_on = [module.branch-protection-rule-opentelemetry-ruby-contrib-1]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-ruby-contrib-3" {
@@ -109,6 +110,7 @@ module "branch-protection-rule-opentelemetry-ruby-contrib-3" {
   allows_force_pushes = true
   allows_deletion = true
   depends_on = [module.branch-protection-rule-opentelemetry-ruby-contrib-2]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-ruby-contrib-4" {

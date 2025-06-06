@@ -36,6 +36,7 @@ module "branch-protection-rule-opentelemetry-js-api-0" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-opentelemetry-js-api.node_id
   pattern = "main"
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-js-api-1" {

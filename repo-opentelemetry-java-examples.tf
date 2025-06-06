@@ -73,7 +73,6 @@ module "branch-protection-rule-opentelemetry-java-examples-0" {
     "gradle-wrapper-validation",
     "required-status-check",
   ]
-  block_creations = true
 }
 
 module "branch-protection-rule-opentelemetry-java-examples-1" {

@@ -57,7 +57,6 @@ module "branch-protection-rule-opentelemetry-proto-java-0" {
     "CodeQL",
     "gradle-wrapper-validation",
   ]
-  block_creations = true
 }
 
 module "branch-protection-rule-opentelemetry-proto-java-1" {

@@ -67,5 +67,6 @@ module "branch-protection-rule-opentelemetry-java-1" {
   required_status_checks = false
   enforce_admins = false
   depends_on = [module.branch-protection-rule-opentelemetry-java-0]
+  block_creations = false
 }
 

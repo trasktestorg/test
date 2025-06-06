@@ -74,5 +74,6 @@ module "branch-protection-rule-opentelemetry-cpp-1" {
   restrict_pushes = false
   enforce_admins = false
   depends_on = [module.branch-protection-rule-opentelemetry-cpp-0]
+  block_creations = false
 }
 

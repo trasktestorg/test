@@ -44,7 +44,6 @@ module "branch-protection-rule-allstar-2" {
   source = "./modules/branch-protection-long-term"
   repository_id = module.repo-allstar.node_id
   pattern = "main"
-  block_creations = true
   depends_on = [module.branch-protection-rule-allstar-1]
 }
 

@@ -75,6 +75,7 @@ module "branch-protection-rule-opentelemetry-java-instrumentation-1" {
     "required-status-check",
   ]
   depends_on = [module.branch-protection-rule-opentelemetry-java-instrumentation-0]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-java-instrumentation-2" {
@@ -86,6 +87,7 @@ module "branch-protection-rule-opentelemetry-java-instrumentation-2" {
   required_status_checks = false
   enforce_admins = false
   depends_on = [module.branch-protection-rule-opentelemetry-java-instrumentation-1]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-java-instrumentation-3" {
@@ -98,6 +100,7 @@ module "branch-protection-rule-opentelemetry-java-instrumentation-3" {
   restrict_pushes = false
   lock_branch = true
   depends_on = [module.branch-protection-rule-opentelemetry-java-instrumentation-2]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-java-instrumentation-4" {
@@ -110,6 +113,7 @@ module "branch-protection-rule-opentelemetry-java-instrumentation-4" {
   restrict_pushes = false
   lock_branch = true
   depends_on = [module.branch-protection-rule-opentelemetry-java-instrumentation-3]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-java-instrumentation-5" {
@@ -122,6 +126,7 @@ module "branch-protection-rule-opentelemetry-java-instrumentation-5" {
   restrict_pushes = false
   enforce_admins = false
   depends_on = [module.branch-protection-rule-opentelemetry-java-instrumentation-4]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-java-instrumentation-6" {

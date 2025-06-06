@@ -71,7 +71,6 @@ module "branch-protection-rule-opentelemetry-collector-0" {
     "windows-unittest (windows-2022)",
     "windows-unittest (windows-2025)",
   ]
-  block_creations = true
 }
 
 module "branch-protection-rule-opentelemetry-collector-1" {
@@ -102,6 +101,7 @@ module "branch-protection-rule-opentelemetry-collector-3" {
   allows_force_pushes = true
   allows_deletion = true
   depends_on = [module.branch-protection-rule-opentelemetry-collector-2]
+  block_creations = false
 }
 
 module "branch-protection-rule-opentelemetry-collector-4" {

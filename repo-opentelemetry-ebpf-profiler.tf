@@ -53,6 +53,5 @@ module "branch-protection-rule-opentelemetry-ebpf-profiler-0" {
   pattern = "main"
   required_approving_review_count = 2
   required_status_checks_strict = false
-  block_creations = true
 }
 

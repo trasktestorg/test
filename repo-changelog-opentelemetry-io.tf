@@ -70,5 +70,6 @@ module "branch-protection-rule-changelog-opentelemetry-io-2" {
   allows_force_pushes = true
   allows_deletion = true
   depends_on = [module.branch-protection-rule-changelog-opentelemetry-io-1]
+  block_creations = false
 }
 
