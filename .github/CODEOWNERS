@@ -1,3 +1,5 @@
+* @open-telemetry/admins
+
 /repo-admin.tf: @open-telemetry/admins
 /repo-allstar.tf: @open-telemetry/admins @open-telemetry/sig-security-maintainers
 /repo-assign-reviewers-action.tf: @open-telemetry/admins @open-telemetry/assign-reviewers-action-maintainers
@@ -68,5 +70,3 @@
 /repo-sig-project-infra.tf: @open-telemetry/admins @open-telemetry/sig-project-infra-maintainers
 /repo-sig-security.tf: @open-telemetry/admins @open-telemetry/sig-security-maintainers
 /repo-weaver.tf: @open-telemetry/admins @open-telemetry/weaver-maintainers
-
-* @open-telemetry/admins
