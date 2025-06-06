@@ -1027,6 +1027,12 @@ resource "github_team" "spec-sponsors" {
   privacy     = "closed"
 }
 
+resource "github_team" "specs-entities-approvers" {
+  name        = "specs-entities-approvers"
+  description = ""
+  privacy     = "closed"
+}
+
 resource "github_team" "specs-logs-approvers" {
   name        = "specs-logs-approvers"
   description = ""

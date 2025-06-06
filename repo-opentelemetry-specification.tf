@@ -27,6 +27,11 @@ resource "github_repository_collaborators" "opentelemetry-specification" {
   }
 
   team {
+    team_id = github_team.specs-entities-approvers.id
+    permission = "push"
+  }
+
+  team {
     team_id = github_team.specs-triagers.id
     permission = "push"
   }
