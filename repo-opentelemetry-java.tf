@@ -13,6 +13,7 @@ module "repo-opentelemetry-java" {
   pages_source_branch = "benchmarks"
 }
 
+
 resource "github_repository_collaborators" "opentelemetry-java" {
   repository = "opentelemetry-java"
 
